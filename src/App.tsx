@@ -1,6 +1,9 @@
+import './App.css';
+
+import Bonus from './components/Bonus';
+import { Icon } from './Model/icon';
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 
 function App() {
   return (
@@ -19,6 +22,16 @@ function App() {
           Learn React
         </a>
       </header>
+      <Bonus
+        icon={Icon.Money}
+        value={'5'}
+      />
+      <Bonus
+        icon={Icon.Multiplier}
+      />
+      <Bonus
+        icon={Icon.Bonus}
+      />
     </div>
   );
 }
