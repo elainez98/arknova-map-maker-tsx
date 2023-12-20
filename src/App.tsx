@@ -1,3 +1,7 @@
+import './App.css';
+
+import Bonus from './components/Bonus';
+import { Icon } from './Model/icon';
 import React from 'react';
 import './App.css';
 import HexagonGrid from './components/HexagonGrid';
@@ -38,7 +42,16 @@ function App() {
      
         {/* <HexagonTest /> */}
         <HexagonGrid gridHeight={410} gridWidth={500} x={50} y={300} hexProps={getHexProps} hexagons={hexagons} renderHexagonContent={renderHexagonContent}/>
-      
+      <Bonus
+        icon={Icon.Money}
+        value={'5'}
+      />
+      <Bonus
+        icon={Icon.Multiplier}
+      />
+      <Bonus
+        icon={Icon.Bonus}
+      />
     </div>
   );
 }
