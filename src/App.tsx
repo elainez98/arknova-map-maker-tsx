@@ -1,24 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HexagonGrid from './components/HexagonGrid';
+import { times } from 'lodash';
 
 function App() {
+
+  const getHexProps = (hexagon) => {
+    return {
+      style: {
+        fill: "#007aff",
+        stroke: "white"
+      },
+      onClick: () => alert(`Hexagon n.${hexagon} has been clicked`)
+    };
+  };
+
+  const renderHexagonContent = (hexagon) => {
+    return (
+      <text
+        x="50%"
+        y="50%"
+        fontSize={100}
+        fontWeight="lighter"
+        style={{ fill: "white" }}
+        textAnchor="middle"
+      >
+        {hexagon}
+      </text>
+    );
+  };
+
+  let hexagons = times(58, (id) => id);
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+        {/* <HexagonTest /> */}
+        <HexagonGrid gridHeight={410} gridWidth={500} x={50} y={300} hexProps={getHexProps} hexagons={hexagons} renderHexagonContent={renderHexagonContent}/>
+      
     </div>
   );
 }
