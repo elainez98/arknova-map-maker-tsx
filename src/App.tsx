@@ -12,8 +12,8 @@ function App() {
   const getHexProps = (hexagon) => {
     return {
       style: {
-        fill: "#007aff",
-        stroke: "white"
+        // fill: "#007aff",
+        stroke: "black"
       },
       onClick: () => alert(`Hexagon n.${hexagon} has been clicked`)
     };
@@ -21,27 +21,44 @@ function App() {
 
   const renderHexagonContent = (hexagon) => {
     return (
-      <text
+      <>
+      {/* <text
         x="50%"
         y="50%"
-        fontSize={100}
+        fontSize={50}
         fontWeight="lighter"
-        style={{ fill: "white" }}
+        style={{ fill: "blue" }}
         textAnchor="middle"
       >
         {hexagon}
-      </text>
+      </text> */}
+      <foreignObject width={200} height={200} x="29%" y="30%">
+        <Bonus icon={Icon.AssociationWorker} />
+      </foreignObject>
+      
+      </>
     );
   };
 
-  let hexagons = times(58, (id) => id);
+  let hexagons = times(58, (id) => {
+    const row = Math.floor(id / 9);
+    const rowIdx = id % 9;
+    let column: number;
+    if (rowIdx > 3) {
+      column = (rowIdx - 4) * 2;
+    }
+    else {
+      column = (rowIdx)*2 + 1;
+    }
+    return `${row}, ${column}`;
+  });
 
   
   return (
     <div className="App">
      
         {/* <HexagonTest /> */}
-        <HexagonGrid gridHeight={410} gridWidth={500} x={50} y={300} hexProps={getHexProps} hexagons={hexagons} renderHexagonContent={renderHexagonContent}/>
+        <HexagonGrid gridHeight={800} gridWidth={1000} x={50} y={100} hexProps={getHexProps} hexagons={hexagons} renderHexagonContent={renderHexagonContent}/>
       <Bonus
         icon={Icon.Money}
         value={'5'}
