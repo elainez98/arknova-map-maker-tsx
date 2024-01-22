@@ -1,14 +1,14 @@
 import { useState } from "react";
 import './Brushbox-textures.css';
-import React from "react";
+import { Terrain } from "../Model/terrain";
 
-const BrushBoxTextures = ({setTextureState}) => {
+const BrushBoxTextures = ({ setBrushSelection }) => {
     const [clicked, setClicked] = useState(-1)
     const [key, setKey] = useState(0)
 
-    const onClickIcon = (key) => {
-        setClicked(key)
-        setTextureState(key)
+    const onClickIcon = (terrain: Terrain) => {
+        setClicked(terrain)
+        setBrushSelection({ terrain: terrain })
     }
 
     const selected = clicked == key ? "selected" : "";
@@ -18,20 +18,17 @@ const BrushBoxTextures = ({setTextureState}) => {
             <div className={`icon-button ${clicked == 0 ? "selected" : ""}`} onClick={() => onClickIcon(0)}>
                 <div className='brushbox-texture' >
                     default
-                    </div>
-                
+                </div>
             </div>
             <div id='2' className={`icon-button ${clicked == 1 ? "selected" : ""} water`} onClick={() => onClickIcon(1)}>
                 <div className='brushbox-texture water' >
                     water
-                    </div>
-                
+                </div>
             </div>
             <div className={`icon-button ${clicked == 2 ? "selected" : ""} mountain`} onClick={() => onClickIcon(2)}>
                 <div className='brushbox-texture mountain' >
                     mountain
-                    </div>
-                
+                </div>
             </div>
         </div>
     )
