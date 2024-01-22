@@ -1,33 +1,40 @@
-import { useState, useEffect } from "react"
 import { isFunction, times } from "lodash"
+import { useEffect, useState } from "react"
+
 import Hexagon from "react-hexagon"
-import Bonus from "./Bonus";
-import { Icon } from '../Model/icon';
 
-
-const getGridDimensions = (gridWidth: number, gridHeight: number, N: number) => {
-  const a = (5 * gridHeight) / (gridWidth * Math.sqrt(2));
-  const b = gridHeight / (2 * gridWidth) - 2;
-
-  const columns = 5
-
-  const hexSize = 60;//Math.floor(gridWidth / (3 * columns + 0.5));
-  const rows = 13;
-
+function getGridDimensions(
+  hexSize = 60,
+  columns = 5,
+  rows = 13
+) {
   return {
-    columns,
     hexSize,
     hexWidth: hexSize * 2,
     hexHeight: Math.ceil(hexSize * Math.sqrt(3)),
+    columns,
     rows
   };
 };
 
-const tryInvoke = (func: (arg0: Object) => any, params: number[] = [], defaultValue?: Object) => {
+function tryInvoke(
+  func: (arg0: Object) => any, params: number[] = [],
+  defaultValue?: Object
+) {
   return isFunction(func) ? func(params) : defaultValue;
 };
 
-const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: number; renderHexagonContent: any; hexProps: any; x: number; y: number; }) => {
+interface HexagonGridProps {
+  hexagons: any[];
+  gridHeight: number;
+  gridWidth: number;
+  renderHexagonContent: any;
+  hexProps: any;
+  x: number;
+  y: number;
+}
+
+function HexagonGrid(props: HexagonGridProps) {
   const {
     hexagons,
     gridHeight,
@@ -38,14 +45,14 @@ const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: nu
     y
   } = props;
 
-  const [hexInfo, setHexInfo] = useState({ columns: 1, hexSize: 1, hexWidth: 1, hexHeight: 1, rows: 0 })
+  const [hexInfo, setHexInfo] = useState(getGridDimensions())
   let skipped = 0
 
   useEffect(() => {
-    if (hexagons.length > 0 && gridWidth > 0 && gridHeight > 0) {
-      setHexInfo(getGridDimensions(gridWidth, gridHeight, hexagons.length));
+    if (hexagons.length) {
+      setHexInfo(getGridDimensions());
     }
-  }, [hexagons, gridWidth, gridHeight]);
+  }, [hexagons]);
 
   const getHexDimensions = (row: number, col: number) => {
     row++
@@ -60,10 +67,8 @@ const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: nu
     return dimensions;
   };
 
-  const getRowDimensions = (row: number) => {
-    row = row
-    var dimensions;
-    dimensions = {
+  function getRowDimensions(row: number) {
+    var dimensions = {
       y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
       height: `${hexInfo.hexHeight}px`,
       width: gridWidth,
@@ -80,9 +85,7 @@ const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: nu
     return dimensions;
   };
 
-
   return (<svg width={gridWidth} height={gridHeight} x={x} y={y}>
-    <>Hello!</>
     {times(hexInfo.rows, (row) => {
       const columns = hexInfo.columns;
       const rowDim = getRowDimensions(row);
@@ -94,7 +97,7 @@ const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: nu
           y={rowDim.y}
         >
           {times(columns, (col) => {
-            if (row % 2 === 0 && col == columns - 1) {
+            if (row % 2 === 0 && col === columns - 1) {
               skipped++
               return <></>
             }
@@ -111,7 +114,6 @@ const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: nu
               >
                 <Hexagon {..._hexProps} flatTop>
                   {tryInvoke(renderHexagonContent, [hexagon], <tspan />)}
-                  
                 </Hexagon>
               </svg>
             );
@@ -120,8 +122,6 @@ const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: nu
       );
     })}
   </svg>);
-
-
 }
 
 export default HexagonGrid
