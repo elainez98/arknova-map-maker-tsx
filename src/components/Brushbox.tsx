@@ -1,17 +1,15 @@
-import React from "react";
 import { useState } from "react"
 import './Brushbox.css';
-import Bonus from "./Bonus"
 import { Icon, IconMap } from '../Model/icon';
 
 
-const BrushBox = ({setIconState}) => {
+const BrushBox = ({setBrushSelection}) => {
   const IconList: any[] = [];
   const [clicked, setClicked] = useState(-1)
 
-  const onClickIcon = (key) => {
-    setClicked(key)
-    setIconState(key)
+  function onClickIcon(icon: Icon) {
+    setClicked(icon);
+    setBrushSelection({ icon });
   }
 
   IconMap.forEach((value, key) => {
@@ -29,13 +27,12 @@ const BrushBox = ({setIconState}) => {
     }
     const selected = clicked == key ? "selected" : "";
     IconList.push(
-      <div className={`icon-button ${selected}`} onClick={()  => onClickIcon(key)}>
+      <div key={key} className={`icon-button ${selected}`} onClick={()  => onClickIcon(key)}>
         <div style={iconStyle} className="icon-brushbox">
           {child}
         </div>
       </div>
     )
-
   })
 
   return (
@@ -44,7 +41,6 @@ const BrushBox = ({setIconState}) => {
       {clicked}
     </div>
   )
-
 }
 
 export default BrushBox

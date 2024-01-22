@@ -1,27 +1,27 @@
 import { Icon } from "./icon"
 import { Terrain } from "./terrain";
 
-export interface Bonus {
+export interface BonusData {
   icon: Icon;
   value?: number;
   hideContainer?: boolean;
 }
 
-export interface Hex {
+export interface HexData {
   index: number;
   terrain: Terrain;
   upgradeRequired?: boolean;
-  bonus?: Bonus;
+  bonus?: BonusData;
 }
 
-function isDefault(hex: Hex) {
+function isDefault(hex: HexData) {
   return !hex.bonus && !hex.upgradeRequired && hex.terrain === Terrain.NORMAL;
 }
 
 /**
  * Stringifies the hex.
  */
-export function stringify(hex: Hex) {
+export function stringify(hex: HexData) {
   if (isDefault(hex)) {
     return '';
   }
@@ -43,9 +43,9 @@ export function stringify(hex: Hex) {
 }
 
 /** Decodes a base64 representation of a hex into a hex. */
-export function decode(b64: string): Hex {
+export function decode(b64: string): HexData {
   const u82 = new Uint8Array(atob(b64).split('').map(c => c.charCodeAt(0)));
-  const result: Hex = {
+  const result: HexData = {
     index: u82[0],
     terrain: u82[1],
   }
@@ -58,7 +58,7 @@ export function decode(b64: string): Hex {
     return result;
   }
 
-  const bonus: Bonus = {
+  const bonus: BonusData = {
     icon: u82[3]
   }
   if (u82[4]) {

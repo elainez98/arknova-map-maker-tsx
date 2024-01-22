@@ -1,8 +1,10 @@
-import { isFunction, times } from "lodash"
-import { useEffect, useState } from "react"
+import { times } from "lodash"
+import { useState } from "react"
 
 import Hexagon from "react-hexagon"
-import { TextureMap } from "../Model/texture";
+import { Terrain, TerrainMap } from "../Model/terrain";
+import { HexData } from "../Model/hex";
+import Bonus from "./Bonus";
 
 function getGridDimensions(
   hexSize = 60,
@@ -18,47 +20,35 @@ function getGridDimensions(
   };
 };
 
-function tryInvoke(
-  func: (arg0: Object) => any, params: number[] = [],
-  defaultValue?: Object
-) {
-  return isFunction(func) ? func(params) : defaultValue;
-};
+function getHexStyle(hexagon: HexData) {
+  return {
+    fill: TerrainMap.get(hexagon.terrain || Terrain.NORMAL),
+    stroke: "black",
+    strokeWidth: 2,
+    margin: 0
+  };
+}
 
 interface HexagonGridProps {
-  hexagons: any[];
-  gridHeight: number;
-  gridWidth: number;
-  renderHexagonContent: any;
-  hexProps: any;
-  icon: any;
-  texture: any;
-  x: number;
-  y: number;
+  hexagons: HexData[];
 }
 
 function HexagonGrid(props: HexagonGridProps) {
   const {
     hexagons,
-    gridHeight,
-    gridWidth,
-    renderHexagonContent,
-    hexProps,
-    x,
-    y,
-    icon,
-    texture
   } = props;
+  const gridWidth = 1000; // TODO: get rid of this
 
-  const [hexInfo, setHexInfo] = useState(getGridDimensions())
-  const [textureStyle, setTextureStyle] = useState({ fill: "beige" })
+  const [hexInfo] = useState(getGridDimensions())
   let skipped = 0
 
-  useEffect(() => {
-    if (hexagons.length) {
-      setHexInfo(getGridDimensions());
-    }
-  }, [hexagons]);
+  function getXYIndex(index) {
+    const row = Math.floor(index / 9);
+    const rowIdx = index % 9;
+    const column: number = rowIdx > 3 ? (rowIdx - 4) * 2 :
+      (rowIdx) * 2 + 1;
+    return `${row}, ${column}`;
+  }
 
   const getHexDimensions = (row: number, col: number) => {
     row++
@@ -77,7 +67,6 @@ function HexagonGrid(props: HexagonGridProps) {
     var dimensions = {
       y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
       height: `${hexInfo.hexHeight}px`,
-      width: gridWidth,
       marginLeft: `${(hexInfo.hexSize) * 3}px`,
       marginTop: 0
     };
@@ -85,7 +74,6 @@ function HexagonGrid(props: HexagonGridProps) {
       dimensions = {
         y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
         height: `${hexInfo.hexHeight}px`,
-        width: gridWidth,
         marginLeft: `${(hexInfo.hexSize / 2) * 3}px`,
         marginTop: 0
       };
@@ -93,19 +81,18 @@ function HexagonGrid(props: HexagonGridProps) {
     return dimensions;
   };
 
-  function testOnClick(hexagon: number) {
+  function testOnClick(hexagon: HexData) {
     console.log("clicked! now", hexagon);
-    setTextureStyle({ fill: TextureMap.get(texture) || "beige" });
   }
 
-  return (<svg width={gridWidth} height={gridHeight} x={x} y={y}>
+  return (<svg width="1000" height="650">
     {times(hexInfo.rows, (row) => {
       const columns = hexInfo.columns;
       const rowDim = getRowDimensions(row);
       return (
         <svg
           key={row}
-          width={rowDim.width}
+          width={gridWidth}
           height={rowDim.height}
           y={rowDim.y}
         >
@@ -115,9 +102,12 @@ function HexagonGrid(props: HexagonGridProps) {
               return <></>
             }
             const iHexagon = (row * hexInfo.columns + col) - skipped;
-            const hexagon = hexagons[iHexagon];
+            const hexagon = hexagons.find(hex => hex.index === iHexagon) || {
+              index: iHexagon,
+              terrain: Terrain.NORMAL,
+            };
             const hexDim = getHexDimensions(row, col);
-            const _hexProps = tryInvoke(hexProps, [hexagon], hexProps);
+            const bonus = hexagon.bonus ? <Bonus bonusData={hexagon.bonus} /> : null;
             return (
               <svg
                 key={iHexagon}
@@ -125,8 +115,10 @@ function HexagonGrid(props: HexagonGridProps) {
                 width={hexDim.width}
                 x={`${hexDim.x}px`}
               >
-                <Hexagon {..._hexProps} flatTop onClick={() => testOnClick(hexagon)} style={textureStyle}>
-                  {tryInvoke(renderHexagonContent, [hexagon], <tspan />)}
+                <Hexagon style={getHexStyle(hexagon)} flatTop onClick={() => testOnClick(hexagon)}>
+                  <foreignObject width={200} height={200} x="29%" y="30%" style={{ pointerEvents: 'none' }}>
+                    {bonus}
+                  </foreignObject>
                 </Hexagon>
               </svg>
             );

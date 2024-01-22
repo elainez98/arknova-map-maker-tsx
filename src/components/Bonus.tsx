@@ -1,18 +1,14 @@
 import './Bonus.css';
 
-import { Icon, IconConfig, IconMap } from "../Model/icon";
-import React from 'react';
-
-export interface BonusProps {
-  icon: Icon,
-  value?: string,
-  hideTile?: boolean
-}
+import { IconMap } from "../Model/icon";
+import { BonusData } from '../Model/hex';
 
 function Bonus(
-  props: BonusProps
+  props: {
+    bonusData: BonusData
+  }
 ) {
-  const { icon, value, hideTile } = props;
+  const { icon, value, hideContainer } = props.bonusData;
   const config = IconMap.get(icon)!;
   let iconStyle = {
     backgroundPosition: `${config.x}% ${config.y}%`,
