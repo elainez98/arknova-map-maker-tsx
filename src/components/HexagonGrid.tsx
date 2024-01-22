@@ -2,6 +2,7 @@ import { isFunction, times } from "lodash"
 import { useEffect, useState } from "react"
 
 import Hexagon from "react-hexagon"
+import { TextureMap } from "../Model/texture";
 
 function getGridDimensions(
   hexSize = 60,
@@ -30,6 +31,8 @@ interface HexagonGridProps {
   gridWidth: number;
   renderHexagonContent: any;
   hexProps: any;
+  icon: any;
+  texture: any;
   x: number;
   y: number;
 }
@@ -42,10 +45,13 @@ function HexagonGrid(props: HexagonGridProps) {
     renderHexagonContent,
     hexProps,
     x,
-    y
+    y,
+    icon,
+    texture
   } = props;
 
   const [hexInfo, setHexInfo] = useState(getGridDimensions())
+  const [textureStyle, setTextureStyle] = useState({ fill: "beige" })
   let skipped = 0
 
   useEffect(() => {
@@ -72,18 +78,25 @@ function HexagonGrid(props: HexagonGridProps) {
       y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
       height: `${hexInfo.hexHeight}px`,
       width: gridWidth,
-      marginLeft: `${(hexInfo.hexSize) * 3}px`
+      marginLeft: `${(hexInfo.hexSize) * 3}px`,
+      marginTop: 0
     };
     if (row % 2 === 0) {
       dimensions = {
         y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
         height: `${hexInfo.hexHeight}px`,
         width: gridWidth,
-        marginLeft: `${(hexInfo.hexSize / 2) * 3}px`
+        marginLeft: `${(hexInfo.hexSize / 2) * 3}px`,
+        marginTop: 0
       };
     }
     return dimensions;
   };
+
+  function testOnClick(hexagon: number) {
+    console.log("clicked! now", hexagon);
+    setTextureStyle({ fill: TextureMap.get(texture) || "beige" });
+  }
 
   return (<svg width={gridWidth} height={gridHeight} x={x} y={y}>
     {times(hexInfo.rows, (row) => {
@@ -112,7 +125,7 @@ function HexagonGrid(props: HexagonGridProps) {
                 width={hexDim.width}
                 x={`${hexDim.x}px`}
               >
-                <Hexagon {..._hexProps} flatTop>
+                <Hexagon {..._hexProps} flatTop onClick={() => testOnClick(hexagon)} style={textureStyle}>
                   {tryInvoke(renderHexagonContent, [hexagon], <tspan />)}
                 </Hexagon>
               </svg>

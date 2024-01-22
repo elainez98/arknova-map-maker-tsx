@@ -1,6 +1,7 @@
 import './Bonus.css';
 
 import { Icon, IconConfig, IconMap } from "../Model/icon";
+import React from 'react';
 
 export interface BonusProps {
   icon: Icon,

@@ -2,24 +2,49 @@ import './App.css';
 
 import Bonus from './components/Bonus';
 import { Icon } from './Model/icon';
-import React from 'react';
+import { TextureMap } from './Model/texture';
+import React, { useState } from 'react';
 import './App.css';
 import HexagonGrid from './components/HexagonGrid';
 import { times } from 'lodash';
+import BrushBox from './components/Brushbox';
+import BrushBoxTextures from './components/Brushbox-textures';
 
 function App() {
 
-  const getHexProps = (hexagon) => {
+  const [icon, setIcon] = useState(-1)
+  const [texture, setTexture] = useState(0)
+
+
+  const setIconState = (iconId: number) => {
+    setIcon(iconId)
+  }
+
+  const setTextureState = (textureId: number) => {
+    setTexture(textureId)
+  }
+
+  const getHexProps = (hexagon: any) => {
     return {
       style: {
-        // fill: "#007aff",
-        stroke: "black"
+        fill: TextureMap.get(texture), //TextureMap.get(0),//
+        stroke: "black",
+        strokeWidth: 2,
+        margin: 0
       },
-      onClick: () => alert(`Hexagon n.${hexagon} has been clicked`)
+      onClick: () => onClickHex(hexagon)//alert(`Hexagon n.${hexagon} has been clicked`)
     };
   };
 
-  const renderHexagonContent = (hexagon) => {
+  const onClickHex = (hexagon) => {
+    alert(`Hexagon n.${hexagon} has been clicked. Set texture to ${TextureMap.get(texture)}`)
+    return {style: {
+      fill: TextureMap.get(texture),
+    }
+  }
+  }
+
+  const renderHexagonContent = (hexagon: any, icon: any = 0) => {
     return (
       <>
       {/* <text
@@ -33,7 +58,7 @@ function App() {
         {hexagon}
       </text> */}
       <foreignObject width={200} height={200} x="29%" y="30%">
-        <Bonus icon={Icon.AssociationWorker} />
+        <Bonus icon={icon} />
       </foreignObject>
       
       </>
@@ -56,10 +81,14 @@ function App() {
   
   return (
     <div className="App">
-     
-        {/* <HexagonTest /> */}
-        <HexagonGrid gridHeight={800} gridWidth={1000} x={50} y={100} hexProps={getHexProps} hexagons={hexagons} renderHexagonContent={renderHexagonContent}/>
-      <Bonus
+      "Icon Id: {icon}"
+      "Texture Id: {texture}"
+    
+      <HexagonGrid gridHeight={650} gridWidth={1000} x={50} y={100} hexProps={getHexProps} hexagons={hexagons} renderHexagonContent={renderHexagonContent} icon={icon} texture={texture}/>
+
+      <BrushBox setIconState={setIconState}/>
+      <BrushBoxTextures setTextureState={setTextureState}/>
+      {/* <Bonus
         icon={Icon.Money}
         value={'5'}
       />
@@ -68,7 +97,7 @@ function App() {
       />
       <Bonus
         icon={Icon.Bonus}
-      />
+      /> */}
     </div>
   );
 }
