@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import { isFunction, times } from "lodash"
 import Hexagon from "react-hexagon"
-import Bonus from "./Bonus";
-import { Icon } from '../Model/icon';
+import React from "react";
+import { TextureMap } from "../Model/texture";
 
 
 const getGridDimensions = (gridWidth: number, gridHeight: number, N: number) => {
@@ -11,7 +11,7 @@ const getGridDimensions = (gridWidth: number, gridHeight: number, N: number) => 
 
   const columns = 5
 
-  const hexSize = 60;//Math.floor(gridWidth / (3 * columns + 0.5));
+  const hexSize = 50;//Math.floor(gridWidth / (3 * columns + 0.5));
   const rows = 13;
 
   return {
@@ -27,7 +27,7 @@ const tryInvoke = (func: (arg0: Object) => any, params: number[] = [], defaultVa
   return isFunction(func) ? func(params) : defaultValue;
 };
 
-const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: number; renderHexagonContent: any; hexProps: any; x: number; y: number; }) => {
+const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: number; renderHexagonContent: any; hexProps: any; x: number; y: number; icon: number; texture: number}) => {
   const {
     hexagons,
     gridHeight,
@@ -35,10 +35,13 @@ const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: nu
     renderHexagonContent,
     hexProps,
     x,
-    y
+    y,
+    icon,
+    texture
   } = props;
 
   const [hexInfo, setHexInfo] = useState({ columns: 1, hexSize: 1, hexWidth: 1, hexHeight: 1, rows: 0 })
+  const [textureStyle, setTextureStyle] = useState({fill: "beige"})
   let skipped = 0
 
   useEffect(() => {
@@ -67,19 +70,26 @@ const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: nu
       y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
       height: `${hexInfo.hexHeight}px`,
       width: gridWidth,
-      marginLeft: `${(hexInfo.hexSize) * 3}px`
+      marginLeft: `${(hexInfo.hexSize) * 3}px`,
+      marginTop: 0
     };
     if (row % 2 === 0) {
       dimensions = {
         y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
         height: `${hexInfo.hexHeight}px`,
         width: gridWidth,
-        marginLeft: `${(hexInfo.hexSize / 2) * 3}px`
+        marginLeft: `${(hexInfo.hexSize / 2) * 3}px`,
+        marginTop: 0
       };
     }
     return dimensions;
   };
 
+  const testOnClick = (hexagon: number) => {
+    console.log("clicked! now", hexagon)
+    setTextureStyle({fill: TextureMap.get(texture) || "beige"})
+    
+  }
 
   return (<svg width={gridWidth} height={gridHeight} x={x} y={y}>
     <>Hello!</>
@@ -109,7 +119,7 @@ const HexagonGrid = (props: { hexagons: any[]; gridHeight: number; gridWidth: nu
                 width={hexDim.width}
                 x={`${hexDim.x}px`}
               >
-                <Hexagon {..._hexProps} flatTop>
+                <Hexagon {..._hexProps } flatTop onClick={() => testOnClick(hexagon)} style={textureStyle}>
                   {tryInvoke(renderHexagonContent, [hexagon], <tspan />)}
                   
                 </Hexagon>
