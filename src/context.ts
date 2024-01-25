@@ -7,4 +7,4 @@ export interface BrushSelection {
   terrain?: Terrain
 }
 
-export const BrushSelectionContext = createContext({});
+export const BrushSelectionContext = createContext({} as BrushSelection);

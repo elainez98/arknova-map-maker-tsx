@@ -1,10 +1,12 @@
 import { times } from "lodash"
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 import Hexagon from "react-hexagon"
 import { Terrain, TerrainMap } from "../Model/terrain";
 import { HexData } from "../Model/hex";
 import Bonus from "./Bonus";
+import { BrushSelectionContext } from "../context";
+import { Icon } from "../Model/icon";
 
 function getGridDimensions(
   hexSize = 60,
@@ -31,13 +33,17 @@ function getHexStyle(hexagon: HexData) {
 
 interface HexagonGridProps {
   hexagons: HexData[];
+  setHexagons?;
 }
 
 function HexagonGrid(props: HexagonGridProps) {
   const {
     hexagons,
+    setHexagons
   } = props;
   const gridWidth = 1000; // TODO: get rid of this
+  const theme = useContext(BrushSelectionContext);
+  const [key, setKey] = useState(1)
 
   const [hexInfo] = useState(getGridDimensions())
   let skipped = 0
@@ -82,7 +88,35 @@ function HexagonGrid(props: HexagonGridProps) {
   };
 
   function testOnClick(hexagon: HexData) {
-    console.log("clicked! now", hexagon);
+    console.log("clicked! now", hexagon,"theme", theme);
+    let newHexagon = hexagons.find(hex => hex.index === hexagon.index) || { index: hexagon.index } as HexData
+    if (theme.hasOwnProperty("icon")) {
+      if (newHexagon.hasOwnProperty("bonus")) {
+        newHexagon.bonus = { icon: JSON.parse(JSON.stringify(theme.icon!)) as Icon }
+      } else {
+        Object.defineProperty(newHexagon, "bonus", { value: { icon: JSON.parse(JSON.stringify(theme.icon)) as Icon }, writable: true })
+      }
+
+    }
+    if (theme.hasOwnProperty("terrain")) {
+      if (newHexagon.hasOwnProperty("terrain")) {
+        newHexagon.terrain = JSON.parse(JSON.stringify(theme.terrain!))
+      } else {
+        Object.defineProperty(newHexagon, "terrain", { value: JSON.parse(JSON.stringify(theme.terrain)), writable: true })
+      }
+    }
+    let newHexes = hexagons
+    if (newHexes.find(hex => hex.index === hexagon.index)) {
+      let idx = newHexes.findIndex(hex => hex.index === hexagon.index)
+      newHexes.splice(idx, 1)
+      newHexes.push(newHexagon)
+    } else {
+      newHexes.push(newHexagon)
+    }
+
+    setHexagons(newHexes)
+    // This line forces a rerender
+    setKey(key+1)
   }
 
   return (<svg width="1000" height="650">
@@ -101,6 +135,7 @@ function HexagonGrid(props: HexagonGridProps) {
               skipped++
               return <></>
             }
+
             const iHexagon = (row * hexInfo.columns + col) - skipped;
             const hexagon = hexagons.find(hex => hex.index === iHexagon) || {
               index: iHexagon,
@@ -118,6 +153,7 @@ function HexagonGrid(props: HexagonGridProps) {
                 <Hexagon style={getHexStyle(hexagon)} flatTop onClick={() => testOnClick(hexagon)}>
                   <foreignObject width={200} height={200} x="29%" y="30%" style={{ pointerEvents: 'none' }}>
                     {bonus}
+                    <div key={key}></div>
                   </foreignObject>
                 </Hexagon>
               </svg>
