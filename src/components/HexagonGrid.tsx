@@ -119,7 +119,7 @@ function HexagonGrid(props: HexagonGridProps) {
     setKey(key+1)
   }
 
-  return (<svg width="1000" height="650">
+  return (<svg width="1000" height="650" key={key}>
     {times(hexInfo.rows, (row) => {
       const columns = hexInfo.columns;
       const rowDim = getRowDimensions(row);
@@ -153,7 +153,6 @@ function HexagonGrid(props: HexagonGridProps) {
                 <Hexagon style={getHexStyle(hexagon)} flatTop onClick={() => testOnClick(hexagon)}>
                   <foreignObject width={200} height={200} x="29%" y="30%" style={{ pointerEvents: 'none' }}>
                     {bonus}
-                    <div key={key}></div>
                   </foreignObject>
                 </Hexagon>
               </svg>
