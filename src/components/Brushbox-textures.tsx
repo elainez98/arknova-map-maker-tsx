@@ -1,19 +1,14 @@
 import { useState } from "react";
 import './Brushbox-textures.css';
 import { Terrain } from "../Model/terrain";
+import { BrushSelection } from "../context";
 
-const BrushBoxTextures = ({ brushSelection, setBrushSelection }) => {
+const BrushBoxTextures = ({setBrushSelection} ) => {
     const [clicked, setClicked] = useState(-1)
     const [key, setKey] = useState(0)
 
     const onClickIcon = (terrain: Terrain) => { 
-        let newBrush = brushSelection
-        if (newBrush.hasOwnProperty("terrain")) {
-            newBrush.terrain = JSON.parse(JSON.stringify(terrain))
-        } else {
-            Object.defineProperty(newBrush, "terrain", { value: JSON.parse(JSON.stringify(terrain)), writable: true })
-        }
-        setBrushSelection(newBrush)
+        setBrushSelection({terrain} as BrushSelection)
         setClicked(terrain)
     }
 

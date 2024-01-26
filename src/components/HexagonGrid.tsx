@@ -5,7 +5,7 @@ import Hexagon from "react-hexagon"
 import { Terrain, TerrainMap } from "../Model/terrain";
 import { HexData } from "../Model/hex";
 import Bonus from "./Bonus";
-import { BrushSelectionContext } from "../context";
+import { BrushSelection, BrushSelectionContext } from "../context";
 import { Icon } from "../Model/icon";
 
 function getGridDimensions(
@@ -33,7 +33,7 @@ function getHexStyle(hexagon: HexData) {
 
 interface HexagonGridProps {
   hexagons: HexData[];
-  setHexagons?;
+  setHexagons: (hexagons: HexData[]) => void;
 }
 
 function HexagonGrid(props: HexagonGridProps) {
@@ -42,8 +42,7 @@ function HexagonGrid(props: HexagonGridProps) {
     setHexagons
   } = props;
   const gridWidth = 1000; // TODO: get rid of this
-  const theme = useContext(BrushSelectionContext);
-  const [key, setKey] = useState(1)
+  const brushSelection: BrushSelection = useContext(BrushSelectionContext);
 
   const [hexInfo] = useState(getGridDimensions())
   let skipped = 0
@@ -88,38 +87,30 @@ function HexagonGrid(props: HexagonGridProps) {
   };
 
   function testOnClick(hexagon: HexData) {
-    console.log("clicked! now", hexagon,"theme", theme);
-    let newHexagon = hexagons.find(hex => hex.index === hexagon.index) || { index: hexagon.index } as HexData
-    if (theme.hasOwnProperty("icon")) {
-      if (newHexagon.hasOwnProperty("bonus")) {
-        newHexagon.bonus = { icon: JSON.parse(JSON.stringify(theme.icon!)) as Icon }
-      } else {
-        Object.defineProperty(newHexagon, "bonus", { value: { icon: JSON.parse(JSON.stringify(theme.icon)) as Icon }, writable: true })
-      }
-
-    }
-    if (theme.hasOwnProperty("terrain")) {
-      if (newHexagon.hasOwnProperty("terrain")) {
-        newHexagon.terrain = JSON.parse(JSON.stringify(theme.terrain!))
-      } else {
-        Object.defineProperty(newHexagon, "terrain", { value: JSON.parse(JSON.stringify(theme.terrain)), writable: true })
+    console.log("clicked! now", hexagon,"theme", brushSelection);
+    const newHexagon = hexagons.find(hex => hex.index === hexagon.index) || { index: hexagon.index } as HexData
+    if (brushSelection.icon !== undefined) {
+      newHexagon.bonus = {
+        ...newHexagon.bonus,
+        icon: brushSelection.icon
       }
     }
-    let newHexes = hexagons
-    if (newHexes.find(hex => hex.index === hexagon.index)) {
-      let idx = newHexes.findIndex(hex => hex.index === hexagon.index)
-      newHexes.splice(idx, 1)
-      newHexes.push(newHexagon)
+    if (brushSelection.terrain !== undefined) {
+      newHexagon.terrain = brushSelection.terrain;
+    }
+    const foundIndex = hexagons.findIndex(hex => hex.index === hexagon.index);
+    if (foundIndex >= 0) {
+      hexagons[foundIndex] = {
+        ...hexagons[foundIndex],
+        ...newHexagon
+      };
     } else {
-      newHexes.push(newHexagon)
+      hexagons.push(newHexagon);
     }
-
-    setHexagons(newHexes)
-    // This line forces a rerender
-    setKey(key+1)
+    setHexagons([...hexagons]);
   }
 
-  return (<svg width="1000" height="650" key={key}>
+  return (<svg width="1000" height="750">
     {times(hexInfo.rows, (row) => {
       const columns = hexInfo.columns;
       const rowDim = getRowDimensions(row);
@@ -135,7 +126,6 @@ function HexagonGrid(props: HexagonGridProps) {
               skipped++
               return <></>
             }
-
             const iHexagon = (row * hexInfo.columns + col) - skipped;
             const hexagon = hexagons.find(hex => hex.index === iHexagon) || {
               index: iHexagon,

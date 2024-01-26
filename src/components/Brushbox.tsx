@@ -1,21 +1,16 @@
 import { useState } from "react"
 import './Brushbox.css';
 import { Icon, IconMap } from '../Model/icon';
+import { BrushSelection } from "../context";
 
 
-const BrushBox = ({brushSelection, setBrushSelection}) => {
+const BrushBox = ({setBrushSelection}) => {
   const IconList: any[] = [];
   const [clicked, setClicked] = useState(-1)
 
   function onClickIcon(icon: Icon) {
     setClicked(icon);
-    let newBrush = brushSelection
-    if (newBrush.hasOwnProperty("icon")) {
-      newBrush.icon = JSON.parse(JSON.stringify( icon )) as Icon 
-    } else {
-      Object.defineProperty(newBrush, "icon", { value:  JSON.parse(JSON.stringify(icon)) , writable: true })
-    }
-    setBrushSelection(newBrush);
+    setBrushSelection({icon} as BrushSelection);
   }
 
   IconMap.forEach((value, key) => {
