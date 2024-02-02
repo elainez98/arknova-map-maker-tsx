@@ -11,13 +11,14 @@ import { HexData } from './Model/hex';
 function App() {
   const [brushSelection, setBrushSelection] = useState({} as BrushSelection);
   const { terrain, icon } = brushSelection;
-  const [hexagons, setHexagons] = useState([] as HexData[])
+  const [hexagons, setHexagons] = useState<HexData[]>([])
 
 
   return (
     <div className="App">
       "Icon Id: {icon}"
       "Terrain Id: {terrain}"
+      "Brush:  {brushSelection.icon} {brushSelection.terrain}""
       <BrushSelectionContext.Provider value={brushSelection}>
         <HexagonGrid hexagons={hexagons} setHexagons={setHexagons}/>
         <BrushBox setBrushSelection={setBrushSelection} />

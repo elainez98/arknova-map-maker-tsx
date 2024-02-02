@@ -3,14 +3,25 @@ import './Brushbox.css';
 import { Icon, IconMap } from '../Model/icon';
 import { BrushSelection } from "../context";
 
+interface BrushBoxProps {
+  setBrushSelection: (selection: BrushSelection) => void;
+}
 
-const BrushBox = ({setBrushSelection}) => {
-  const IconList: any[] = [];
-  const [clicked, setClicked] = useState(-1)
+
+const BrushBox = (props: BrushBoxProps) => {
+  const {setBrushSelection} = props
+  const iconList: JSX.Element[] = [];
+  const [clicked, setClicked] = useState(-2)
+  const [value, setValue] = useState("0")
 
   function onClickIcon(icon: Icon) {
     setClicked(icon);
-    setBrushSelection({icon} as BrushSelection);
+    setBrushSelection({icon});
+  }
+  
+  function onClickDelete() {
+    setClicked(-1)
+    setBrushSelection({deleteIcon: true})
   }
 
   IconMap.forEach((value, key) => {
@@ -27,7 +38,7 @@ const BrushBox = ({setBrushSelection}) => {
       };
     }
     const selected = clicked == key ? "selected" : "";
-    IconList.push(
+    iconList.push(
       <div key={key} className={`icon-button ${selected}`} onClick={()  => onClickIcon(key)}>
         <div style={iconStyle} className="icon-brushbox">
           {child}
@@ -36,10 +47,15 @@ const BrushBox = ({setBrushSelection}) => {
     )
   })
 
+  const selectDelete = clicked === -1 ? "selected delete" : "";
   return (
     <div className='icon-box'>
-      {IconList}
+      {iconList}
       {clicked}
+      <button className={`icon-button ${selectDelete}`} onClick={onClickDelete}>Delete</button>
+      <label>
+        <input name="value" value={value} onChange={e => setValue(e.target.value)}/>
+      </label>
     </div>
   )
 }

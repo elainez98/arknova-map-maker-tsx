@@ -86,27 +86,33 @@ function HexagonGrid(props: HexagonGridProps) {
     return dimensions;
   };
 
-  function testOnClick(hexagon: HexData) {
-    console.log("clicked! now", hexagon,"theme", brushSelection);
-    const newHexagon = hexagons.find(hex => hex.index === hexagon.index) || { index: hexagon.index } as HexData
-    if (brushSelection.icon !== undefined) {
-      newHexagon.bonus = {
-        ...newHexagon.bonus,
-        icon: brushSelection.icon
+  function updateHexagon(hexagon: HexData) {
+    const hex = hexagons.find(hex => hex.index === hexagon.index)
+
+    if (!hex) {
+      const newHexagon: HexData = {
+        index: hexagon.index,
+        terrain: brushSelection.terrain ? brushSelection.terrain : Terrain.NORMAL,
+        bonus: brushSelection.icon ? {icon: brushSelection.icon} : undefined,
+      }
+      hexagons.push(newHexagon)
+    } else {
+      hex.terrain = brushSelection.terrain !== undefined
+        ? brushSelection.terrain 
+        : hex.terrain
+      
+      if (brushSelection.icon !== undefined) {
+        hex.bonus = {
+          ...hex.bonus,
+          icon: brushSelection.icon
+        }
+      }
+
+      if (brushSelection.deleteIcon) {
+        hex.bonus = undefined
       }
     }
-    if (brushSelection.terrain !== undefined) {
-      newHexagon.terrain = brushSelection.terrain;
-    }
-    const foundIndex = hexagons.findIndex(hex => hex.index === hexagon.index);
-    if (foundIndex >= 0) {
-      hexagons[foundIndex] = {
-        ...hexagons[foundIndex],
-        ...newHexagon
-      };
-    } else {
-      hexagons.push(newHexagon);
-    }
+    
     setHexagons([...hexagons]);
   }
 
@@ -140,7 +146,7 @@ function HexagonGrid(props: HexagonGridProps) {
                 width={hexDim.width}
                 x={`${hexDim.x}px`}
               >
-                <Hexagon style={getHexStyle(hexagon)} flatTop onClick={() => testOnClick(hexagon)}>
+                <Hexagon style={getHexStyle(hexagon)} flatTop onClick={() => updateHexagon(hexagon)}>
                   <foreignObject width={200} height={200} x="29%" y="30%" style={{ pointerEvents: 'none' }}>
                     {bonus}
                   </foreignObject>

@@ -3,12 +3,18 @@ import './Brushbox-textures.css';
 import { Terrain } from "../Model/terrain";
 import { BrushSelection } from "../context";
 
-const BrushBoxTextures = ({setBrushSelection} ) => {
+interface BrushBoxProps {
+    setBrushSelection: (selection: BrushSelection) => void;
+}
+
+
+const BrushBoxTextures = (props: BrushBoxProps) => {
+    const {setBrushSelection} = props
     const [clicked, setClicked] = useState(-1)
     const [key, setKey] = useState(0)
 
-    const onClickIcon = (terrain: Terrain) => { 
-        setBrushSelection({terrain} as BrushSelection)
+    const onClickIcon = (terrain: Terrain) => {
+        setBrushSelection({ terrain });
         setClicked(terrain)
     }
 
