@@ -4,41 +4,44 @@ import { Terrain } from "../Model/terrain";
 import { BrushSelection } from "../context";
 
 interface BrushBoxProps {
-    setBrushSelection: (selection: BrushSelection) => void;
+  setBrushSelection: (selection: BrushSelection) => void;
+  brushSelection: BrushSelection;
 }
 
-
 const BrushBoxTextures = (props: BrushBoxProps) => {
-    const {setBrushSelection} = props
-    const [clicked, setClicked] = useState(-1)
-    const [key, setKey] = useState(0)
+  const { setBrushSelection, brushSelection } = props
 
-    const onClickIcon = (terrain: Terrain) => {
-        setBrushSelection({ terrain });
-        setClicked(terrain)
-    }
+  const onClickIcon = (terrain: Terrain) => {
+    setBrushSelection({ terrain });
+  }
 
-    const selected = clicked == key ? "selected" : "";
-
-    return (
-        <div className='icon-box' >
-            <div className={`icon-button ${clicked == 0 ? "selected" : ""}`} onClick={() => onClickIcon(0)}>
-                <div className='brushbox-texture' >
-                    default
-                </div>
-            </div>
-            <div id='2' className={`icon-button ${clicked == 1 ? "selected" : ""} water`} onClick={() => onClickIcon(1)}>
-                <div className='brushbox-texture water' >
-                    water
-                </div>
-            </div>
-            <div className={`icon-button ${clicked == 2 ? "selected" : ""} mountain`} onClick={() => onClickIcon(2)}>
-                <div className='brushbox-texture mountain' >
-                    mountain
-                </div>
-            </div>
+  return (
+    <div className='icon-box' >
+      <div
+        className={`icon-button ${brushSelection.terrain === Terrain.NORMAL ? "selected" : ""}`}
+        onClick={()=> onClickIcon(Terrain.NORMAL)}
+      >
+        <div className='brushbox-texture' >
+          default
         </div>
-    )
+      </div>
+      <div 
+        className={`icon-button ${brushSelection.terrain === Terrain.WATER ? "selected" : ""} water`} 
+        onClick={()=> onClickIcon(Terrain.WATER)}
+      >
+        <div className='brushbox-texture water' >
+          water
+        </div>
+      </div>
+      <div
+        className={`icon-button ${brushSelection.terrain === Terrain.ROCK ? "selected" : ""} rock`}
+        onClick={() => onClickIcon(Terrain.ROCK)}>
+        <div className='brushbox-texture rock' >
+          mountain
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default BrushBoxTextures

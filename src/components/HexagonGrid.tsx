@@ -92,8 +92,8 @@ function HexagonGrid(props: HexagonGridProps) {
     if (!hex) {
       const newHexagon: HexData = {
         index: hexagon.index,
-        terrain: brushSelection.terrain ? brushSelection.terrain : Terrain.NORMAL,
-        bonus: brushSelection.icon ? {icon: brushSelection.icon} : undefined,
+        terrain: brushSelection.terrain || Terrain.NORMAL,
+        bonus: brushSelection.icon ? {icon: brushSelection.icon, value: brushSelection.value} : undefined,
       }
       hexagons.push(newHexagon)
     } else {
@@ -104,7 +104,8 @@ function HexagonGrid(props: HexagonGridProps) {
       if (brushSelection.icon !== undefined) {
         hex.bonus = {
           ...hex.bonus,
-          icon: brushSelection.icon
+          icon: brushSelection.icon,
+          value: brushSelection.value
         }
       }
 

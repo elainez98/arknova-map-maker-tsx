@@ -21,8 +21,8 @@ function App() {
       "Brush:  {brushSelection.icon} {brushSelection.terrain}""
       <BrushSelectionContext.Provider value={brushSelection}>
         <HexagonGrid hexagons={hexagons} setHexagons={setHexagons}/>
-        <BrushBox setBrushSelection={setBrushSelection} />
-        <BrushBoxTextures setBrushSelection={setBrushSelection} />
+        <BrushBox setBrushSelection={setBrushSelection} brushSelection={brushSelection}/>
+        <BrushBoxTextures setBrushSelection={setBrushSelection} brushSelection={brushSelection}/>
       </BrushSelectionContext.Provider>
     </div>
   );

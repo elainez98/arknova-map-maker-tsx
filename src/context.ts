@@ -9,4 +9,4 @@ export interface BrushSelection {
   deleteIcon?: boolean
 }
 
-export const BrushSelectionContext = createContext({} as BrushSelection);
+export const BrushSelectionContext = createContext<BrushSelection>({});
