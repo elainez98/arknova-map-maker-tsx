@@ -14,7 +14,10 @@ const BrushBox = (props: BrushBoxProps) => {
   const iconList: JSX.Element[] = [];
 
   function onClickIcon(icon: Icon) {
-    setBrushSelection({icon});
+    setBrushSelection({
+      value: brushSelection.value,
+      icon
+    });
   }
   
   function onClickDelete() {
@@ -22,11 +25,9 @@ const BrushBox = (props: BrushBoxProps) => {
   }
 
   const handleInputChange = (event) => {
-    // Remove non-numeric characters using a regular expression
-    const numericValue = event.target.value.replace(/[^0-9]/g, '');
     setBrushSelection({
       ...brushSelection,
-      value: Number(numericValue),
+      value: Number(event.target.value),
     })
   };
 
@@ -63,11 +64,14 @@ const BrushBox = (props: BrushBoxProps) => {
       {iconList}
       Icon: {brushSelection.icon}
       value: {brushSelection.value}
-      <button className={`icon-button ${selectDelete}`} onClick={onClickDelete}>Delete</button>
+      <button className={`icon-button ${selectDelete}`} onClick={onClickDelete}>
+          Delete
+      </button>
       <label>
         <input
+          type="number"
           name="value"
-          onChange={handleInputChange}
+          onInput={handleInputChange}
           placeholder="Enter a value"
         />
       </label>
