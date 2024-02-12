@@ -1,8 +1,8 @@
 import './Bonus.css';
 
-import { IconMap, Icon, VALUE_ICONS } from "../Model/icon";
-import { BonusData } from '../Model/hex';
+import { IconMap, VALUE_ICONS } from "../Model/icon";
 
+import { BonusData } from '../Model/hex';
 
 function Bonus(
   props: {

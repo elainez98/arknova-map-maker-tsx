@@ -22,7 +22,6 @@ export enum Icon {
   Tower,
 }
 
-
 export const VALUE_ICONS = [
   Icon.Money,
   Icon.Reputation,
@@ -55,5 +54,4 @@ export const IconMap: Map<Icon, IconConfig> =
     [Icon.Clever, 39.490, 40.739, 2385.3],
     [Icon.Marketing, 97.179, 40.694, 1765.5],
     [Icon.Tower, 78.898, 1.1312, 2946.8],
-  ].map(([icon, x, y, size]) => [icon, new IconConfig(icon, x, y, size)]));    
-
+  ].map(([icon, x, y, size]) => [icon, new IconConfig(icon, x, y, size)]));

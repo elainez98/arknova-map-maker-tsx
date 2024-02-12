@@ -1,7 +1,8 @@
-import { useState } from "react"
 import './Brushbox.css';
+
 import { Icon, IconMap } from '../Model/icon';
-import { BrushSelection, BrushSelectionContext } from "../context";
+
+import { BrushSelection } from "../context";
 
 interface BrushBoxProps {
   setBrushSelection: (selection: BrushSelection) => void;
@@ -10,7 +11,7 @@ interface BrushBoxProps {
 
 
 const BrushBox = (props: BrushBoxProps) => {
-  const {setBrushSelection, brushSelection} = props
+  const { setBrushSelection, brushSelection } = props
   const iconList: JSX.Element[] = [];
 
   function onClickIcon(icon: Icon) {
@@ -19,9 +20,9 @@ const BrushBox = (props: BrushBoxProps) => {
       icon,
     });
   }
-  
+
   function onClickDelete() {
-    setBrushSelection({deleteIcon: true})
+    setBrushSelection({ deleteIcon: true })
   }
 
   const handleInputChange = (event) => {
@@ -68,7 +69,7 @@ const BrushBox = (props: BrushBoxProps) => {
         className={`icon-button ${selectDelete}`}
         onClick={onClickDelete}
       >
-          Delete
+        Delete
       </button>
       <label>
         <input

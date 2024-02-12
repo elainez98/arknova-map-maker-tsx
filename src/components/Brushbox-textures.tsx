@@ -1,9 +1,8 @@
-import { useState } from "react";
 import './Brushbox-textures.css';
-import { Terrain } from "../Model/terrain";
-import { BrushSelection } from "../context";
-import classNames from "classnames";
 
+import { BrushSelection } from "../context";
+import { Terrain } from "../Model/terrain";
+import classNames from "classnames";
 
 interface BrushBoxProps {
   setBrushSelection: (selection: BrushSelection) => void;

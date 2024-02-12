@@ -47,14 +47,6 @@ function HexagonGrid(props: HexagonGridProps) {
   const [hexInfo] = useState(getGridDimensions())
   let skipped = 0
 
-  function getXYIndex(index) {
-    const row = Math.floor(index / 9);
-    const rowIdx = index % 9;
-    const column: number = rowIdx > 3 ? (rowIdx - 4) * 2 :
-      (rowIdx) * 2 + 1;
-    return `${row}, ${column}`;
-  }
-
   const getHexDimensions = (row: number, col: number) => {
     row++
     const dimensions = {

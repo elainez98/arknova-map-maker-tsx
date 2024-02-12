@@ -25,9 +25,10 @@ function getHexagonsOrDefault(serializedHexes: string | null): HexData[] {
 
 function App() {
   const [brushSelection, setBrushSelection] = useState({} as BrushSelection);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const { terrain, icon } = brushSelection;
-  const [hexagons, setHexagons] = useState<HexData[]>(getHexagonsOrDefault(searchParams.get('hexes')))
+  const [hexagons, setHexagons] =
+    useState<HexData[]>(getHexagonsOrDefault(searchParams.get('hexes')))
 
   return (
     <div className="App">
