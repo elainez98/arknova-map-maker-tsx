@@ -9,7 +9,7 @@ export interface BonusData {
 
 export interface HexData {
   index: number;
-  terrain: Terrain;
+  terrain?: Terrain;
   upgradeRequired?: boolean;
   bonus?: BonusData;
 }
@@ -27,14 +27,14 @@ export function stringify(hex: HexData) {
   }
   let array: Uint8Array = hex.bonus ? new Uint8Array([
     hex.index,
-    hex.terrain,
+    hex.terrain || Terrain.NORMAL,
     hex.upgradeRequired ? 1 : 0,
     hex.bonus.icon,
     hex.bonus.value || 0,
     hex.bonus.hideContainer ? 1 : 0
   ]) : new Uint8Array([
     hex.index,
-    hex.terrain,
+    hex.terrain || Terrain.NORMAL,
     hex.upgradeRequired ? 1 : 0
   ]);
 

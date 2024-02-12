@@ -16,7 +16,7 @@ const BrushBox = (props: BrushBoxProps) => {
   function onClickIcon(icon: Icon) {
     setBrushSelection({
       value: brushSelection.value,
-      icon
+      icon,
     });
   }
   
@@ -64,7 +64,10 @@ const BrushBox = (props: BrushBoxProps) => {
       {iconList}
       Icon: {brushSelection.icon}
       value: {brushSelection.value}
-      <button className={`icon-button ${selectDelete}`} onClick={onClickDelete}>
+      <button
+        className={`icon-button ${selectDelete}`}
+        onClick={onClickDelete}
+      >
           Delete
       </button>
       <label>

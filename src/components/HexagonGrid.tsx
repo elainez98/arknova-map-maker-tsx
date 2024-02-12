@@ -6,19 +6,19 @@ import { Terrain, TerrainMap } from "../Model/terrain";
 import { HexData } from "../Model/hex";
 import Bonus from "./Bonus";
 import { BrushSelection, BrushSelectionContext } from "../context";
-import { Icon } from "../Model/icon";
+import { Icon, VALUE_ICONS } from "../Model/icon";
 
 function getGridDimensions(
   hexSize = 60,
   columns = 5,
-  rows = 13
+  rows = 13,
 ) {
   return {
     hexSize,
     hexWidth: hexSize * 2,
     hexHeight: Math.ceil(hexSize * Math.sqrt(3)),
     columns,
-    rows
+    rows,
   };
 };
 
@@ -27,7 +27,7 @@ function getHexStyle(hexagon: HexData) {
     fill: TerrainMap.get(hexagon.terrain || Terrain.NORMAL),
     stroke: "black",
     strokeWidth: 2,
-    margin: 0
+    margin: 0,
   };
 }
 
@@ -39,7 +39,7 @@ interface HexagonGridProps {
 function HexagonGrid(props: HexagonGridProps) {
   const {
     hexagons,
-    setHexagons
+    setHexagons,
   } = props;
   const gridWidth = 1000; // TODO: get rid of this
   const brushSelection: BrushSelection = useContext(BrushSelectionContext);
@@ -60,7 +60,7 @@ function HexagonGrid(props: HexagonGridProps) {
     const dimensions = {
       width: `${hexInfo.hexWidth}px`,
       height: `${hexInfo.hexHeight}px`,
-      x: col * hexInfo.hexSize * 3
+      x: col * hexInfo.hexSize * 3,
     };
     if (row % 2 === 1) {
       dimensions.x += hexInfo.hexSize * (3 / 2);
@@ -73,14 +73,14 @@ function HexagonGrid(props: HexagonGridProps) {
       y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
       height: `${hexInfo.hexHeight}px`,
       marginLeft: `${(hexInfo.hexSize) * 3}px`,
-      marginTop: 0
+      marginTop: 0,
     };
     if (row % 2 === 0) {
       dimensions = {
         y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
         height: `${hexInfo.hexHeight}px`,
         marginLeft: `${(hexInfo.hexSize / 2) * 3}px`,
-        marginTop: 0
+        marginTop: 0,
       };
     }
     return dimensions;
@@ -92,7 +92,7 @@ function HexagonGrid(props: HexagonGridProps) {
     if (!hex) {
       const newHexagon: HexData = {
         index: hexagon.index,
-        terrain: brushSelection.terrain || Terrain.NORMAL,
+        terrain: brushSelection.terrain,
         bonus: brushSelection.icon ? {icon: brushSelection.icon, value: brushSelection.value} : undefined,
       }
       hexagons.push(newHexagon)
@@ -105,12 +105,12 @@ function HexagonGrid(props: HexagonGridProps) {
         hex.bonus = {
           ...hex.bonus,
           icon: brushSelection.icon,
-          value: brushSelection.value
+          value: VALUE_ICONS.includes(brushSelection.icon) ? brushSelection.value : undefined,
         }
       }
 
       if (brushSelection.deleteIcon) {
-        hex.bonus = undefined
+        hex.bonus = undefined;
       }
     }
     

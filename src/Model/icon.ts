@@ -22,6 +22,16 @@ export enum Icon {
   Tower,
 }
 
+
+export const VALUE_ICONS = [
+  Icon.Money,
+  Icon.Reputation,
+  Icon.Hunter,
+  Icon.Sunbathing,
+  Icon.Perception,
+  Icon.Pouch,
+];
+
 export class IconConfig {
   constructor(
     readonly icon: Icon,
