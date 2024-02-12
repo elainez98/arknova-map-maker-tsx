@@ -1,10 +1,10 @@
+import { Terrain, TerrainMap } from "../Model/terrain";
+
+import Bonus from "./Bonus";
+import { HexData } from "../Model/hex";
+import Hexagon from "react-hexagon"
 import { times } from "lodash"
 import { useState } from "react"
-
-import Hexagon from "react-hexagon"
-import { Terrain, TerrainMap } from "../Model/terrain";
-import { HexData } from "../Model/hex";
-import Bonus from "./Bonus";
 
 function getGridDimensions(
   hexSize = 60,

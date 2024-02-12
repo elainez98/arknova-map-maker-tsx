@@ -1,25 +1,34 @@
 import './App.css';
 
-import Bonus from './components/Bonus';
-import { Terrain, TerrainMap } from './Model/terrain';
-import React, { useState } from 'react';
-import './App.css';
-import HexagonGrid from './components/HexagonGrid';
+import { BrushSelection, BrushSelectionContext } from './context';
+import { HexData, decode } from './Model/hex';
+
 import BrushBox from './components/Brushbox';
 import BrushBoxTextures from './components/Brushbox-textures';
-import { BrushSelectionContext, BrushSelection } from './context';
-import { HexData } from './Model/hex';
+import ExportUrl from './components/ExportUrl';
+import HexagonGrid from './components/HexagonGrid';
+import { Icon } from './Model/icon';
+import { Terrain } from './Model/terrain';
+import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+
+function getHexagonsOrDefault(serializedHexes: string | null): HexData[] {
+  if (!serializedHexes) {
+    return [{ index: 3, terrain: Terrain.ROCK }, {
+      index: 24, terrain: Terrain.WATER, bonus: {
+        icon: Icon.Clever
+      }
+    }];
+  }
+  return serializedHexes.split(',').map(decode);
+}
 
 function App() {
   const [brushSelection, setBrushSelection] = useState({} as BrushSelection);
   const { terrain, icon } = brushSelection;
 
-  const hexagons: HexData[] = [
-    {
-      index: 3,
-      terrain: Terrain.ROCK
-    }
-  ];
+  const [searchParams, setSearchParams] = useSearchParams();
+  const hexagons = getHexagonsOrDefault(searchParams.get('hexes'));
 
   return (
     <div className="App">
@@ -30,6 +39,7 @@ function App() {
         <BrushBox setBrushSelection={setBrushSelection} />
         <BrushBoxTextures setBrushSelection={setBrushSelection} />
       </BrushSelectionContext.Provider>
+      <ExportUrl hexagons={hexagons} />
     </div>
   );
 }
