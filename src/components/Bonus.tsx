@@ -1,7 +1,8 @@
 import './Bonus.css';
 
-import { IconMap } from "../Model/icon";
+import { IconMap, Icon, VALUE_ICONS } from "../Model/icon";
 import { BonusData } from '../Model/hex';
+
 
 function Bonus(
   props: {
@@ -9,15 +10,23 @@ function Bonus(
   }
 ) {
   const { icon, value, hideContainer } = props.bonusData;
+
+
+  const hasValue = VALUE_ICONS.includes(icon);
   const config = IconMap.get(icon)!;
   let iconStyle = {
     backgroundPosition: `${config.x}% ${config.y}%`,
     backgroundSize: `${config.size}%`,
   }
-  return <div className="icon-container">
+  const innerIcon =
     <div style={iconStyle} className="icon">
-      <span className="icon-value">{value}</span>
-    </div>
+      {hasValue ? (<span className="icon-value">{value}</span>) : <></>}
+    </div>;
+  if (hideContainer) {
+    return innerIcon
+  }
+  return <div className="icon-container">
+    {innerIcon}
   </div>;
 }
 

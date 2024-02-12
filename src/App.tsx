@@ -25,19 +25,19 @@ function getHexagonsOrDefault(serializedHexes: string | null): HexData[] {
 
 function App() {
   const [brushSelection, setBrushSelection] = useState({} as BrushSelection);
-  const { terrain, icon } = brushSelection;
-
   const [searchParams, setSearchParams] = useSearchParams();
-  const hexagons = getHexagonsOrDefault(searchParams.get('hexes'));
+  const { terrain, icon } = brushSelection;
+  const [hexagons, setHexagons] = useState<HexData[]>(getHexagonsOrDefault(searchParams.get('hexes')))
 
   return (
     <div className="App">
       "Icon Id: {icon}"
       "Terrain Id: {terrain}"
+      "Brush:  {brushSelection.icon} {brushSelection.terrain}""
       <BrushSelectionContext.Provider value={brushSelection}>
-        <HexagonGrid hexagons={hexagons} />
-        <BrushBox setBrushSelection={setBrushSelection} />
-        <BrushBoxTextures setBrushSelection={setBrushSelection} />
+        <HexagonGrid hexagons={hexagons} setHexagons={setHexagons} />
+        <BrushBox setBrushSelection={setBrushSelection} brushSelection={brushSelection} />
+        <BrushBoxTextures setBrushSelection={setBrushSelection} brushSelection={brushSelection} />
       </BrushSelectionContext.Provider>
       <ExportUrl hexagons={hexagons} />
     </div>
