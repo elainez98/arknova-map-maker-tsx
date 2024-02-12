@@ -5,6 +5,8 @@ import { Icon } from './Model/icon';
 export interface BrushSelection {
   icon?: Icon;
   terrain?: Terrain
+  value?: number
+  deleteIcon?: boolean
 }
 
-export const BrushSelectionContext = createContext({});
+export const BrushSelectionContext = createContext<BrushSelection>({});
