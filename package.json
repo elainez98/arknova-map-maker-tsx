@@ -2,6 +2,7 @@
   "name": "arknova-map-maker-tsx",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://elainez98.github.io/arknova-map-maker-tsx",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -26,6 +27,8 @@
     }
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -50,6 +53,8 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.202"
+    "@types/lodash": "^4.14.202",
+    "gh-pages": "^6.1.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
