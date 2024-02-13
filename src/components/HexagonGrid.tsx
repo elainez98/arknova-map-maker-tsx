@@ -25,8 +25,8 @@ function getGridDimensions(
 function getHexStyle(hexagon: HexData) {
   return {
     fill: TerrainMap.get(hexagon.terrain || Terrain.NORMAL),
-    stroke: "black",
-    strokeWidth: 2,
+    stroke: hexagon.buildUpgrade ? "red" : "black",
+    strokeWidth: hexagon.buildUpgrade ? 5 : 2,
     margin: 0,
   };
 }
@@ -85,6 +85,7 @@ function HexagonGrid(props: HexagonGridProps) {
       const newHexagon: HexData = {
         index: hexagon.index,
         terrain: brushSelection.terrain,
+        buildUpgrade: brushSelection.buildUpgrade || undefined,
         bonus: brushSelection.icon ? { icon: brushSelection.icon, value: brushSelection.value } : undefined,
       }
       hexagons.push(newHexagon)
@@ -92,6 +93,7 @@ function HexagonGrid(props: HexagonGridProps) {
       hex.terrain = brushSelection.terrain !== undefined
         ? brushSelection.terrain
         : hex.terrain
+      hex.buildUpgrade = brushSelection.buildUpgrade || undefined;
 
       if (brushSelection.icon !== undefined) {
         hex.bonus = {

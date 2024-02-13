@@ -3,6 +3,7 @@ import './Brushbox-textures.css';
 import { BrushSelection } from "../context";
 import { Terrain } from "../Model/terrain";
 import classNames from "classnames";
+import { useState } from 'react';
 
 interface BrushBoxProps {
   setBrushSelection: (selection: BrushSelection) => void;
@@ -11,9 +12,20 @@ interface BrushBoxProps {
 
 const BrushBoxTextures = (props: BrushBoxProps) => {
   const { setBrushSelection, brushSelection } = props
+  const [buildUpgrade, setBuildUpgrade] = useState(false);
 
   const onClickIcon = (terrain: Terrain) => {
-    setBrushSelection({ terrain });
+    setBrushSelection({ terrain, buildUpgrade });
+  }
+
+  function toggleBuildUpgrade() {
+    setBuildUpgrade(!buildUpgrade);
+    if (brushSelection.terrain !== undefined) {
+      setBrushSelection({
+        terrain: brushSelection.terrain,
+        buildUpgrade
+      });
+    }
   }
 
   function btnClass(terrain: Terrain) {
@@ -22,6 +34,7 @@ const BrushBoxTextures = (props: BrushBoxProps) => {
       "selected": brushSelection.terrain === terrain,
       "water": terrain === Terrain.WATER,
       "rock": terrain === Terrain.ROCK,
+      "build-upgrade": buildUpgrade,
     })
   }
 
@@ -49,6 +62,12 @@ const BrushBoxTextures = (props: BrushBoxProps) => {
         <div className='brushbox-texture rock' >
           mountain
         </div>
+      </div>
+      <div className="build">
+        <label htmlFor="buildII">Require Upgraded Build?</label>
+        <input type="checkbox" id="buildII"
+          checked={buildUpgrade}
+          onChange={toggleBuildUpgrade} />
       </div>
     </div>
   )

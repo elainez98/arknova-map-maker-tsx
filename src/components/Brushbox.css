@@ -24,13 +24,13 @@
   }
 
   .icon-button {
-    border: 3px solid red;
+    border: 3px solid lightgrey;
     border-radius: 10px;
     padding: 3px;
   }
 
   .selected {
-    border: 3px solid blue;
+    border: 3px solid grey;
   }
   
   .delete {

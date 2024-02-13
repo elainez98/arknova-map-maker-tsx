@@ -9,6 +9,14 @@
     background-color: beige;
   }
 
+  .icon-button.build-upgrade {
+    border-color: tomato;
+  }
+
+  .icon-button.build-upgrade.selected {
+    border-color: orangered;
+  }
+
   .water {
     background-color:aqua;
   }
@@ -16,4 +24,11 @@
   .rock {
     background-color:gray;
     color: white;
+  }
+
+  .build {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }

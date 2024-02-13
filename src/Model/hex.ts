@@ -10,12 +10,12 @@ export interface BonusData {
 export interface HexData {
   index: number;
   terrain?: Terrain;
-  upgradeRequired?: boolean;
+  buildUpgrade?: boolean;
   bonus?: BonusData;
 }
 
 function isDefault(hex: HexData) {
-  return !hex.bonus && !hex.upgradeRequired && hex.terrain === Terrain.NORMAL;
+  return !hex.bonus && !hex.buildUpgrade && hex.terrain === Terrain.NORMAL;
 }
 
 /**
@@ -28,14 +28,14 @@ export function stringify(hex: HexData) {
   let array: Uint8Array = hex.bonus ? new Uint8Array([
     hex.index,
     hex.terrain || Terrain.NORMAL,
-    hex.upgradeRequired ? 1 : 0,
+    hex.buildUpgrade ? 1 : 0,
     hex.bonus.icon,
     hex.bonus.value || 0,
     hex.bonus.hideContainer ? 1 : 0
   ]) : new Uint8Array([
     hex.index,
     hex.terrain || Terrain.NORMAL,
-    hex.upgradeRequired ? 1 : 0
+    hex.buildUpgrade ? 1 : 0
   ]);
 
   const decoder = new TextDecoder('utf8');
@@ -50,7 +50,7 @@ export function decode(b64: string): HexData {
     terrain: u82[1],
   }
   if (u82[2]) {
-    result.upgradeRequired = true;
+    result.buildUpgrade = true;
   }
 
   // return early if no bonus
