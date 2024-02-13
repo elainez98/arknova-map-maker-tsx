@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/arknova-map-maker-tsx/static/css/main.eb65c102.css",
+    "main.js": "/arknova-map-maker-tsx/static/js/main.f8f0e3e0.js",
+    "static/js/787.b1c98cba.chunk.js": "/arknova-map-maker-tsx/static/js/787.b1c98cba.chunk.js",
+    "static/media/icons.png": "/arknova-map-maker-tsx/static/media/icons.4063f6add1294b58bb75.png",
+    "index.html": "/arknova-map-maker-tsx/index.html",
+    "main.eb65c102.css.map": "/arknova-map-maker-tsx/static/css/main.eb65c102.css.map",
+    "main.f8f0e3e0.js.map": "/arknova-map-maker-tsx/static/js/main.f8f0e3e0.js.map",
+    "787.b1c98cba.chunk.js.map": "/arknova-map-maker-tsx/static/js/787.b1c98cba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb65c102.css",
+    "static/js/main.f8f0e3e0.js"
+  ]
+}
