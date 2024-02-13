@@ -7,18 +7,12 @@ import BrushBox from './components/Brushbox';
 import BrushBoxTextures from './components/Brushbox-textures';
 import ExportUrl from './components/ExportUrl';
 import HexagonGrid from './components/HexagonGrid';
-import { Icon } from './Model/icon';
-import { Terrain } from './Model/terrain';
 import { useSearchParams } from 'react-router-dom';
 import { useState } from 'react';
 
 function getHexagonsOrDefault(serializedHexes: string | null): HexData[] {
   if (!serializedHexes) {
-    return [{ index: 3, terrain: Terrain.ROCK }, {
-      index: 24, terrain: Terrain.WATER, bonus: {
-        icon: Icon.Clever
-      }
-    }];
+    return [];
   }
   return serializedHexes.split(',').map(decode);
 }
