@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrushSelection, BrushSelectionContext } from "../context";
 import { Terrain, TerrainMap } from "../Model/terrain";
 import { useContext, useState } from "react"

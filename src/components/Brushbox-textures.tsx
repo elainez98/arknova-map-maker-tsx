@@ -1,3 +1,4 @@
+import React from 'react';
 import './Brushbox-textures.css';
 
 import { BrushSelection } from "../context";

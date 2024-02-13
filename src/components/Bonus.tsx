@@ -1,3 +1,4 @@
+import React from 'react';
 import './Bonus.css';
 
 import { IconMap, VALUE_ICONS } from "../Model/icon";

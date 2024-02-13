@@ -1,3 +1,4 @@
+import React from 'react';
 import './ExportUrl.css';
 
 import { HexData, stringify } from '../Model/hex';
