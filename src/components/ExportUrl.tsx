@@ -10,8 +10,8 @@ interface ExportUrlProps {
 };
 
 function isDefaultHex(hex: HexData) {
-  const { terrain, upgradeRequired, bonus } = hex;
-  return (terrain === Terrain.NORMAL || !terrain) && !upgradeRequired && !bonus;
+  const { terrain, buildUpgrade, bonus } = hex;
+  return (terrain === Terrain.NORMAL || !terrain) && !buildUpgrade && !bonus;
 }
 
 function ExportUrl(props: ExportUrlProps) {
