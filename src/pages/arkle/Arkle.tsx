@@ -32,7 +32,7 @@ function getRandomCard(expansion: boolean): number {
   if (!expansion) {
     usedCards = usedCards.filter(card => card.expansion === "BASE");
   }
-  usedCards = usedCards.filter(card => card.type.includes("Pet"))
+  usedCards = usedCards.filter(card => !card.type.includes("Pet"))
   const index = Math.floor(Math.random() * usedCards.length);
   const card = usedCards[index];
 
