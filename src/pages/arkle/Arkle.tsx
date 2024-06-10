@@ -162,8 +162,8 @@ function Arkle() {
       </div>
       {win && (<div className="win">You Win!</div>)}
       <div className="reset-container">
-        <div>card id: {card.card_id}</div>
-        <div>card name: {card.name}</div>
+        {/* <div>card id: {card.card_id}</div>
+        <div>card name: {card.name}</div> */}
         <button type="button" onClick={reset}>reset</button>
       </div>
     </div >
