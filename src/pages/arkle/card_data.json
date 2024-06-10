@@ -1,0 +1,2821 @@
+[
+  {
+    "card_id": 401,
+    "name": "CHEETAH",
+    "scientific_name": "Acinonyx jubatus",
+    "size": 5,
+    "cost": 17,
+    "type": [
+      "Predator",
+      "Predator"
+    ],
+    "continent": "Africa",
+    "ability": "Sprint 3",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 402,
+    "name": "LION",
+    "scientific_name": "Panthera leo",
+    "size": 4,
+    "cost": 16,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Africa",
+    "reqs": "Predator x3",
+    "ability": "Pack",
+    "tickets": 9,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 403,
+    "name": "LEOPARD",
+    "scientific_name": "Panthera pardus",
+    "size": 3,
+    "rock_water": "R",
+    "cost": 20,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Africa",
+    "reqs": "Partner zoo",
+    "ability": "Hunter 4",
+    "tickets": 7,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 404,
+    "name": "CARACAL",
+    "scientific_name": "Caracal caracal",
+    "size": 2,
+    "cost": 9,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Africa",
+    "ability": "Hunter 2",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 405,
+    "name": "FENNEC FOX",
+    "scientific_name": "Vulpes zerda",
+    "size": 1,
+    "cost": 8,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Africa",
+    "ability": "Clever",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 406,
+    "name": "SIBERIAN TIGER",
+    "scientific_name": "Panthera tigris altaica",
+    "size": 5,
+    "cost": 30,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Asia",
+    "reqs": "Asia x3",
+    "ability": "",
+    "tickets": 10,
+    "conservation": 2,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 407,
+    "name": "SUMATRAN TIGER",
+    "scientific_name": "Panthera tigris sumatrae",
+    "size": 4,
+    "rock_water": "WW",
+    "cost": 26,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Asia",
+    "reqs": "Science x2",
+    "ability": "",
+    "tickets": 8,
+    "conservation": 2,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 408,
+    "name": "SLOTH BEAR",
+    "scientific_name": "Melursus ursinus",
+    "size": 3,
+    "cost": 14,
+    "type": [
+      "Predator",
+      "Bear"
+    ],
+    "continent": "Asia",
+    "ability": "Boost:Association",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 409,
+    "name": "SUN BEAR",
+    "scientific_name": "Helarctos malayanus",
+    "size": 2,
+    "cost": 16,
+    "type": [
+      "Predator",
+      "Bear"
+    ],
+    "continent": "Asia",
+    "reqs": "Partner zoo",
+    "ability": "Action: Association",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 410,
+    "name": "YELLOW-THROATED MARTEN",
+    "scientific_name": "Martes flavigula",
+    "size": 1,
+    "cost": 7,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Asia",
+    "ability": "Hunter 1",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 411,
+    "name": "GRIZZLY BEAR",
+    "scientific_name": "Ursus arctos horribilis",
+    "size": 5,
+    "cost": 22,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Americas",
+    "reqs": "Predator x2\nAnimals II",
+    "ability": "Inventive\nFull-throated",
+    "tickets": 9,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 412,
+    "name": "JAGUAR",
+    "scientific_name": "Panthera onca",
+    "size": 4,
+    "cost": 16,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Americas",
+    "reqs": "Americas",
+    "ability": "Hunter 4",
+    "tickets": 8,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 413,
+    "name": "COUGAR",
+    "scientific_name": "Puma concolor",
+    "size": 3,
+    "rock_water": "R",
+    "cost": 10,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Americas",
+    "ability": "Jumping 3",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 414,
+    "name": "SOUTH AMERICAN COATI",
+    "scientific_name": "Nasua nasua",
+    "size": 2,
+    "rock_water": "R",
+    "cost": 11,
+    "type": [
+      "Predator",
+      "Bear"
+    ],
+    "continent": "Americas",
+    "ability": "Inventive 1",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 415,
+    "name": "RACCOON",
+    "scientific_name": "Procyon lotor",
+    "size": 1,
+    "cost": 11,
+    "type": [
+      "Predator",
+      "Bear"
+    ],
+    "continent": "Americas",
+    "ability": "Boost:Association",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 416,
+    "name": "EURASIAN BROWN BEAR",
+    "scientific_name": "Ursus arctos arctos",
+    "size": 5,
+    "rock_water": "W",
+    "cost": 20,
+    "type": [
+      "Predator",
+      "Bear"
+    ],
+    "continent": "Europe",
+    "reqs": "Bear\nAnimals II",
+    "ability": "Multiplier: Association\nFull-throated",
+    "tickets": 8,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 417,
+    "name": "WOLF",
+    "scientific_name": "Canis lupus",
+    "size": 4,
+    "cost": 12,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Europe",
+    "ability": "Pack",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 418,
+    "name": "EURASIAN LYNX",
+    "scientific_name": "Lynx lynx",
+    "size": 3,
+    "cost": 11,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Europe",
+    "reqs": "Europe x2",
+    "ability": "Iconic Animal: Europe",
+    "tickets": 2,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 419,
+    "name": "EUROPEAN BADGER",
+    "scientific_name": "Meles meles",
+    "size": 2,
+    "cost": 5,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Europe",
+    "ability": "Boost: Aminals",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 420,
+    "name": "STOAT",
+    "scientific_name": "Mustela erminea",
+    "size": 1,
+    "cost": 4,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Europe",
+    "reqs": "Europe",
+    "ability": "Hunter 1",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 421,
+    "name": "NEW ZEALAND FUR SEAL",
+    "scientific_name": "Arctocephalus forsteri",
+    "size": 5,
+    "rock_water": "WR",
+    "cost": 17,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Australia",
+    "reqs": "Animals II",
+    "ability": "Full-throated",
+    "tickets": 8,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 422,
+    "name": "AUSTRALIAN SEA LION",
+    "scientific_name": "Neophoca cinerea",
+    "size": 4,
+    "rock_water": "W",
+    "cost": 18,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Australia",
+    "reqs": "Partner zoo",
+    "ability": "Sunbathing 3",
+    "tickets": 7,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 423,
+    "name": "NEW ZEALAND SEA LION",
+    "scientific_name": "Phocarctos hookeri",
+    "size": 3,
+    "rock_water": "W",
+    "cost": 17,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Australia",
+    "ability": "Pack",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 424,
+    "name": "AUSTRALIAN DINGO",
+    "scientific_name": "Canis lupus dingo",
+    "size": 2,
+    "cost": 13,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Australia",
+    "ability": "Pack",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 425,
+    "name": "TASMANIAN DEVIL",
+    "scientific_name": "Sarcophilus harrisii",
+    "size": 1,
+    "cost": 11,
+    "type": [
+      "Predator"
+    ],
+    "continent": "Australia",
+    "reqs": "Science",
+    "ability": "Pouch 1",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 426,
+    "name": "AFRICAN BUSH ELEPHANT",
+    "scientific_name": "Loxodonta africana",
+    "size": 5,
+    "cost": 36,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Africa",
+    "reqs": "Animals II",
+    "ability": "Resistance",
+    "tickets": 10,
+    "conservation": 0,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 427,
+    "name": "WHITE RHINOCEROS",
+    "scientific_name": "Ceratotherium simum",
+    "size": 4,
+    "rock_water": "R",
+    "cost": 24,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Africa",
+    "reqs": "Science",
+    "ability": "Assertion",
+    "tickets": 9,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 428,
+    "name": "GIRAFFE",
+    "scientific_name": "Giraffa",
+    "size": 3,
+    "cost": 16,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Africa",
+    "ability": "Boost: Sponsors",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 429,
+    "name": "GREVY'S ZEBRA",
+    "scientific_name": "Equus grevyi",
+    "size": 2,
+    "cost": 12,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Africa",
+    "reqs": "Africa x3",
+    "ability": "Boost: Sponsors\nFlock Animal 2",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 430,
+    "name": "PYGMY HIPPOPOTAMUS",
+    "scientific_name": "Choeropsis liberiensis",
+    "size": 2,
+    "rock_water": "W",
+    "cost": 15,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Africa",
+    "reqs": "Partner zoo",
+    "ability": "Action: Sponsors",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 431,
+    "name": "ASIAN ELEPHANT",
+    "scientific_name": "Elephas maximus",
+    "size": 5,
+    "rock_water": "W",
+    "cost": 33,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Asia",
+    "reqs": "Animals II",
+    "ability": "Resistance",
+    "tickets": 8,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 432,
+    "name": "INDIAN RHINOCEROS",
+    "scientific_name": "Rhinoceros unicornis",
+    "size": 4,
+    "cost": 25,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Asia",
+    "reqs": "Animals II",
+    "ability": "Assertion",
+    "tickets": 9,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 433,
+    "name": "GIANT PANDA",
+    "scientific_name": "Ailuropoda melanoleuca",
+    "size": 3,
+    "cost": 27,
+    "type": [
+      "Herbivore",
+      "Bear"
+    ],
+    "continent": "Asia",
+    "reqs": "Herbivore\nBear\nPartner zoo",
+    "ability": "",
+    "tickets": 10,
+    "conservation": 2,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 434,
+    "name": "RED PANDA",
+    "scientific_name": "Ailurus fulgens",
+    "size": 2,
+    "cost": 16,
+    "type": [
+      "Herbivore",
+      "Bear"
+    ],
+    "continent": "Asia",
+    "reqs": "Science x2",
+    "ability": "Multiplier: Sponsors",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 435,
+    "name": "MALAYAN TAPIR",
+    "scientific_name": "Tapirus indicus",
+    "size": 2,
+    "cost": 17,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Asia",
+    "ability": "Digging 3",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 436,
+    "name": "AMERICAN BISON",
+    "scientific_name": "Bos bison",
+    "size": 5,
+    "cost": 18,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Americas",
+    "reqs": "Americas x3",
+    "ability": "Iconic Animal: Americas",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 437,
+    "name": "MUSKOX",
+    "scientific_name": "Ovibos moschatus",
+    "size": 4,
+    "cost": 13,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Americas",
+    "reqs": "Americas",
+    "ability": "Sponsor Magnet",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 438,
+    "name": "REINDEER",
+    "scientific_name": "Rangifer tarandus",
+    "size": 3,
+    "cost": 12,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Americas",
+    "ability": "Flock Animal 3",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 439,
+    "name": "LAMA",
+    "scientific_name": "Lama glama",
+    "size": 2,
+    "cost": 10,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Americas",
+    "ability": "Flock Animal 2",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 440,
+    "name": "MOUNTAIN TAPIR",
+    "scientific_name": "Tapirus pinchaque",
+    "size": 2,
+    "rock_water": "R",
+    "cost": 15,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Americas",
+    "ability": "Digging 2",
+    "tickets": 4,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 441,
+    "name": "EUROPEAN BISON",
+    "scientific_name": "Bos bonasus",
+    "size": 5,
+    "cost": 19,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Europe",
+    "reqs": "Partner zoo",
+    "ability": "Sponsor Magnet",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 442,
+    "name": "MOOSE",
+    "scientific_name": "Alces alces",
+    "size": 4,
+    "cost": 19,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Europe",
+    "reqs": "Herbivore x2",
+    "ability": "Multiplier: Sponsors\nFlock Animal 4",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 443,
+    "name": "RED DEER",
+    "scientific_name": "Cervus elaphus",
+    "size": 3,
+    "cost": 12,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Europe",
+    "ability": "Flock Animal 3",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 444,
+    "name": "ALPINE IBEX",
+    "scientific_name": "Capra ibex",
+    "size": 2,
+    "rock_water": "RR",
+    "cost": 10,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Europe",
+    "ability": "Jumping 2",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 445,
+    "name": "CRESTED PORCUPINE",
+    "scientific_name": "Hystric cristata",
+    "size": 1,
+    "cost": 8,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Europe",
+    "ability": "Digging 2",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 446,
+    "name": "DUGONG",
+    "scientific_name": "Dugong dugon",
+    "size": 5,
+    "rock_water": "WW",
+    "cost": 25,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Australia",
+    "reqs": "Animals II",
+    "ability": "Digging 4",
+    "tickets": 9,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 447,
+    "name": "RED KANGAROO",
+    "scientific_name": "Macropus rufus",
+    "size": 4,
+    "cost": 23,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Australia",
+    "ability": "Pouch 2\nFlock Animal 4",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 448,
+    "name": "KOALA",
+    "scientific_name": "Phascolarctos cinereus",
+    "size": 3,
+    "rock_water": "R",
+    "cost": 21,
+    "type": [
+      "Herbivore",
+      "Bear"
+    ],
+    "continent": "Australia",
+    "reqs": "Australia",
+    "ability": "Pouch 2",
+    "tickets": 8,
+    "conservation": 0,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 449,
+    "name": "PLATYPUS",
+    "scientific_name": "Ornithorhynchus anatinus",
+    "size": 2,
+    "rock_water": "W",
+    "cost": 10,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Australia",
+    "ability": "Venom 1",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 450,
+    "name": "COMMON WOMBAT",
+    "scientific_name": "Vombatus ursinus",
+    "size": 2,
+    "cost": 9,
+    "type": [
+      "Herbivore"
+    ],
+    "continent": "Australia",
+    "ability": "Pouch 1",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 451,
+    "name": "PROBOSCIS MONKEY",
+    "scientific_name": "Nasalis larvatus",
+    "size": 5,
+    "rock_water": "R",
+    "cost": 32,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Asia",
+    "reqs": "Primate x2\nAnimals II",
+    "ability": "Dominance",
+    "tickets": 10,
+    "conservation": 2,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 452,
+    "name": "SENEGAL BUSHBABY",
+    "scientific_name": "Galago senegalensis",
+    "size": 1,
+    "cost": 10,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Africa",
+    "reqs": "Africa x2",
+    "ability": "Iconic Animal: Africa",
+    "tickets": 1,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 453,
+    "name": "COLLARED MANGABEY",
+    "scientific_name": "Cercocebus torquatus",
+    "size": 4,
+    "cost": 20,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Africa",
+    "reqs": "Africa",
+    "ability": "Action: Cards",
+    "tickets": 8,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 454,
+    "name": "RING-TAILED LEMUR",
+    "scientific_name": "Lemur catta",
+    "size": 3,
+    "rock_water": "R",
+    "cost": 12,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Africa",
+    "ability": "Sunbathing 3",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 455,
+    "name": "MANTLED GUEREZA",
+    "scientific_name": "Colobus guereza",
+    "size": 3,
+    "cost": 13,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Africa",
+    "ability": "Clever",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 456,
+    "name": "BARBARY MACAQUE",
+    "scientific_name": "Macaca sylvanus",
+    "size": 2,
+    "cost": 13,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Africa",
+    "reqs": "Partner zoo",
+    "ability": "Pilfering 1",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 457,
+    "name": "MANDRILL",
+    "scientific_name": "Mandrillus sphinx",
+    "size": 5,
+    "cost": 28,
+    "type": [
+      "Primate",
+      "Primate"
+    ],
+    "continent": "Africa",
+    "reqs": "Primate x3",
+    "ability": "Multiplier: Cards",
+    "tickets": 9,
+    "conservation": 2,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 458,
+    "name": "JAPANCES MACAQUE",
+    "scientific_name": "Macaca fuscata",
+    "size": 3,
+    "rock_water": "W",
+    "cost": 18,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Africa",
+    "reqs": "Asia",
+    "ability": "Pilfering 2",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 459,
+    "name": "RED-SHANKED DOUC",
+    "scientific_name": "Pygathrix nemaeus",
+    "size": 4,
+    "cost": 17,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Asia",
+    "reqs": "Science",
+    "ability": "Inventive",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 460,
+    "name": "DUSKY-LEAF MONKEY",
+    "scientific_name": "Trachypithecus obscurus",
+    "size": 2,
+    "cost": 12,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Asia",
+    "ability": "Clever",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 461,
+    "name": "HORSFIELD'S TARSIER",
+    "scientific_name": "Cephalopachus bancanus",
+    "size": 1,
+    "cost": 14,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Asia",
+    "reqs": "Partner zoo",
+    "ability": "Jumping 4",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 2,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 462,
+    "name": "NORTHERN PLAINS GRAY LANGUR",
+    "scientific_name": "Semnopithecus entellus",
+    "size": 3,
+    "rock_water": "R",
+    "cost": 13,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Asia",
+    "ability": "Jumping 3",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 463,
+    "name": "PANAMANIAN WHITE-FACED CAPUCHIN",
+    "scientific_name": "Cebus imitator",
+    "size": 2,
+    "cost": 11,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Americas",
+    "reqs": "Partner zoo",
+    "ability": "Pilfering 1",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 464,
+    "name": "BROWN SPIDER MONKEY",
+    "scientific_name": "Ateles hybridus",
+    "size": 4,
+    "cost": 17,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Americas",
+    "reqs": "Primate",
+    "ability": "Inventive",
+    "tickets": 6,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 465,
+    "name": "GOLDEN LION TAMARIN",
+    "scientific_name": "Leontopithecus rosalia",
+    "size": 1,
+    "cost": 10,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Americas",
+    "ability": "Clever",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 466,
+    "name": "BOLIVIAN RED HOWLER",
+    "scientific_name": "Alouatta sara",
+    "size": 3,
+    "cost": 12,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Americas",
+    "ability": "Boost: Cards",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 467,
+    "name": "ECUADORIAN SQUIRELL MONKEY",
+    "scientific_name": "Saimiri macrodon",
+    "size": 2,
+    "cost": 12,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Americas",
+    "ability": "Clever",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 468,
+    "name": "COTTON-TOP TAMARIN",
+    "scientific_name": "Saguinus oedipus",
+    "size": 1,
+    "cost": 15,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Americas",
+    "reqs": "Science x2",
+    "ability": "",
+    "tickets": 4,
+    "conservation": 1,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 469,
+    "name": "NILE CROCODILE",
+    "scientific_name": "Crocodylus niloticus",
+    "size": 5,
+    "rock_water": "W",
+    "special": "RH 3",
+    "cost": 13,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Africa",
+    "reqs": "Reptile x3",
+    "ability": "Snapping 2",
+    "tickets": 9,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 470,
+    "name": "WESTERN GREEN MAMBA",
+    "scientific_name": "Dendroaspis viridis",
+    "size": 2,
+    "special": "RH 1",
+    "cost": 13,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Africa",
+    "reqs": "Africa\nReptile",
+    "ability": "Venom 2",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 471,
+    "name": "AFRICAN SPURRED TORTOISE",
+    "scientific_name": "Centrochelys sulcata",
+    "size": 3,
+    "special": "RH 2",
+    "cost": 22,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Africa",
+    "ability": "Sunbathing 3",
+    "tickets": 6,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 472,
+    "name": "ROCK MONITOR",
+    "scientific_name": "Varanus albigularis",
+    "size": 2,
+    "rock_water": "R",
+    "special": "RH 1",
+    "cost": 12,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Africa",
+    "ability": "Sunbathing 3",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 473,
+    "name": "COMMON AGAMA",
+    "scientific_name": "Agama agama",
+    "size": 1,
+    "special": "RH 0",
+    "cost": 9,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Africa",
+    "ability": "Sunbathing 2",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 474,
+    "name": "INDIAN ROCK PYTHON",
+    "scientific_name": "Python molurus",
+    "size": 2,
+    "special": "RH 1",
+    "cost": 14,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Asia",
+    "reqs": "Reptile x2",
+    "ability": "Constriction",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 475,
+    "name": "KING COBRA",
+    "scientific_name": "Ophiophagus hannah",
+    "size": 2,
+    "special": "RH 1",
+    "cost": 13,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Asia",
+    "reqs": "Science x2\nAnimals II",
+    "ability": "Hypnosis 3",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 476,
+    "name": "KOMODO DRAGON",
+    "scientific_name": "Varanus komodoensis",
+    "size": 3,
+    "special": "RH 2",
+    "cost": 14,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Asia",
+    "reqs": "Asia x2",
+    "ability": "Iconic Animal: Asia",
+    "tickets": 2,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 477,
+    "name": "VEILED CHAMELEON",
+    "scientific_name": "Chamaeleo calyptratus",
+    "size": 1,
+    "special": "RH 0",
+    "cost": 14,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Asia",
+    "ability": "Snapping 1",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 478,
+    "name": "CHINESE WATER DRAGON",
+    "scientific_name": "Physignathus cocincinus",
+    "size": 1,
+    "rock_water": "W",
+    "special": "RH 0",
+    "cost": 8,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Asia",
+    "ability": "Sunbathing 2",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 479,
+    "name": "AMERICAN ALLIGATOR",
+    "scientific_name": "Alligator mississippiensis",
+    "size": 4,
+    "rock_water": "W",
+    "special": "RH 2",
+    "cost": 18,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Americas",
+    "ability": "Snapping 1",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 480,
+    "name": "BROAD-SNOUTED CAIMAN",
+    "scientific_name": "Caiman latirostris",
+    "size": 4,
+    "rock_water": "W",
+    "special": "RH 2",
+    "cost": 16,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Americas",
+    "ability": "Snapping 1",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 481,
+    "name": "GALAPAGOS GIANT TORTOISE",
+    "scientific_name": "Chelonoidis nigra",
+    "size": 3,
+    "special": "RH 2",
+    "cost": 30,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Americas",
+    "reqs": "Americas x2\nAnimals II",
+    "ability": "Sunbathing 4",
+    "tickets": 8,
+    "conservation": 2,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 482,
+    "name": "ANACONDA",
+    "scientific_name": "Eunectes murinus",
+    "size": 2,
+    "rock_water": "W",
+    "special": "RH 1",
+    "cost": 13,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Americas",
+    "reqs": "Partner zoo",
+    "ability": "Constriction",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 483,
+    "name": "BOA CONSTRICTOR",
+    "scientific_name": "Boa constrictor",
+    "size": 2,
+    "special": "RH 1",
+    "cost": 16,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Americas",
+    "reqs": "Science x2",
+    "ability": "Constriction",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 484,
+    "name": "EUROPEAN POND TURTLE",
+    "scientific_name": "Emys orbicularis",
+    "size": 1,
+    "rock_water": "W",
+    "special": "RH 1",
+    "cost": 9,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Europe",
+    "ability": "",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 485,
+    "name": "COMMON EUROPEAN ADDER",
+    "scientific_name": "Vipera berus",
+    "size": 1,
+    "special": "RH 0",
+    "cost": 10,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Europe",
+    "reqs": "Partner zoo",
+    "ability": "Hypnosis 3",
+    "tickets": 2,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 486,
+    "name": "COMMON WALL LIZARD",
+    "scientific_name": "Podarcis muralis",
+    "size": 1,
+    "rock_water": "R",
+    "special": "RH 0",
+    "cost": 4,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Europe",
+    "ability": "",
+    "tickets": 2,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 487,
+    "name": "EUROPEAN GRASS SNAKE",
+    "scientific_name": "Natrix natrix",
+    "size": 1,
+    "rock_water": "W",
+    "special": "RH 0",
+    "cost": 8,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Europe",
+    "ability": "Clever",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 488,
+    "name": "SLOW WORM",
+    "scientific_name": "Anguis fragilis",
+    "size": 1,
+    "rock_water": "W",
+    "special": "RH 0",
+    "cost": 4,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Europe",
+    "ability": "",
+    "tickets": 2,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 489,
+    "name": "SALTWATER CROCODILE",
+    "scientific_name": "Crocodylus porosus",
+    "size": 5,
+    "rock_water": "W",
+    "special": "RH 3",
+    "cost": 23,
+    "type": [
+      "Reptile",
+      "Reptile"
+    ],
+    "continent": "Australia",
+    "reqs": "Partner zoo",
+    "ability": "Snapping 2",
+    "tickets": 9,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 490,
+    "name": "GOULD'S MONITOR",
+    "scientific_name": "Varanus gouldii",
+    "size": 3,
+    "special": "RH 2",
+    "cost": 15,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Australia",
+    "ability": "Scavenging 2",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 491,
+    "name": "FRILLED LIZARD",
+    "scientific_name": "Chlamydosaurus kingii",
+    "size": 2,
+    "rock_water": "R",
+    "special": "RH 1",
+    "cost": 12,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Australia",
+    "ability": "Sprint 1",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 492,
+    "name": "INLAND TAIPAN",
+    "scientific_name": "Oxyuranus microlepidotus",
+    "size": 2,
+    "rock_water": "R",
+    "special": "RH 1",
+    "cost": 10,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Australia",
+    "reqs": "Australia\nScience",
+    "ability": "Venom 2",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 493,
+    "name": "THORNY DEVIL",
+    "scientific_name": "Moloch horridus",
+    "size": 1,
+    "rock_water": "R",
+    "special": "RH 0",
+    "cost": 6,
+    "type": [
+      "Reptile"
+    ],
+    "continent": "Australia",
+    "ability": "",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 494,
+    "name": "AFRICAN OSTRICH",
+    "scientific_name": "Struthio camelus",
+    "size": 5,
+    "special": "LBA 4",
+    "cost": 20,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Africa",
+    "ability": "Sprint 2",
+    "tickets": 8,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 495,
+    "name": "SECRETARY BIRD",
+    "scientific_name": "Sagittarius serpentarius",
+    "size": 4,
+    "special": "LBA 1",
+    "cost": 14,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Africa",
+    "ability": "",
+    "tickets": 4,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 496,
+    "name": "MARABOU",
+    "scientific_name": "Leptoptilos crumenifer",
+    "size": 3,
+    "special": "LBA 1",
+    "cost": 10,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Africa",
+    "ability": "Scavenging 2",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 497,
+    "name": "LESSER FLAMINGO",
+    "scientific_name": "Phoeniconaias minor",
+    "size": 2,
+    "rock_water": "W",
+    "cost": 15,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Africa",
+    "ability": "Posturing 1",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 498,
+    "name": "SHOEBILL",
+    "scientific_name": "Balaeniceps rex",
+    "size": 1,
+    "special": "LBA 1",
+    "cost": 9,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Africa",
+    "reqs": "Science x2",
+    "ability": "",
+    "tickets": 3,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 499,
+    "name": "CINEREOUS VULTURE",
+    "scientific_name": "Aegypius monachus",
+    "size": 5,
+    "special": "LBA 1",
+    "cost": 16,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Asia",
+    "ability": "Scavenging 3",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 500,
+    "name": "LONG-BILLED VULTURE",
+    "scientific_name": "Gyps indicus",
+    "size": 4,
+    "rock_water": "R",
+    "special": "LBA 1",
+    "cost": 20,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Asia",
+    "reqs": "Science",
+    "ability": "Scavenging 3",
+    "tickets": 5,
+    "conservation": 1,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 501,
+    "name": "INDIAN PEAFOWL",
+    "scientific_name": "Pavo cristatus",
+    "size": 3,
+    "cost": 18,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Asia",
+    "reqs": "Asia",
+    "ability": "Posturing 2",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 502,
+    "name": "GREAT HORNBILL",
+    "scientific_name": "Buceros bicornis",
+    "size": 2,
+    "cost": 13,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Asia",
+    "ability": "Boost: Build",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 503,
+    "name": "SNOWY OWL",
+    "scientific_name": "Bubo scandiacus",
+    "size": 1,
+    "cost": 11,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Asia",
+    "reqs": "Bird x2",
+    "ability": "Perception 4",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 504,
+    "name": "ANDEAN CONDOR",
+    "scientific_name": "Vultur gryphus",
+    "size": 5,
+    "rock_water": "R",
+    "special": "LBA 1",
+    "cost": 17,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Americas",
+    "reqs": "Bird",
+    "ability": "Scavenging 4",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 1,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 505,
+    "name": "BALD EAGLE",
+    "scientific_name": "Haliaeetus leucocephalus",
+    "size": 4,
+    "rock_water": "W",
+    "special": "LBA 1",
+    "cost": 23,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Americas",
+    "reqs": "Animals II",
+    "ability": "Determination",
+    "tickets": 8,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 506,
+    "name": "KING VULTURE",
+    "scientific_name": "Sarcoramphus papa",
+    "size": 3,
+    "special": "LBA 1",
+    "cost": 12,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Americas",
+    "reqs": "Bird x3",
+    "ability": "Scavenging 5",
+    "tickets": 9,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 507,
+    "name": "GREATER RHEA",
+    "scientific_name": "Rhea americana",
+    "size": 2,
+    "cost": 12,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Americas",
+    "ability": "Sprint 1",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 508,
+    "name": "SCARLET MACAW",
+    "scientific_name": "Ara macao",
+    "size": 1,
+    "cost": 16,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Americas",
+    "reqs": "Partner zoo",
+    "ability": "Posturing 3",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 509,
+    "name": "GOLDEN EAGLE",
+    "scientific_name": "Aquila chrysaetos",
+    "size": 5,
+    "rock_water": "R",
+    "special": "LBA 1",
+    "cost": 20,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Europe",
+    "reqs": "Animals II",
+    "ability": "Determination",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 510,
+    "name": "WHITE STORK",
+    "scientific_name": "Ciconia ciconia",
+    "size": 4,
+    "special": "LBA 1",
+    "cost": 9,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Europe",
+    "reqs": "Europe",
+    "ability": "Multiplier: Build",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 511,
+    "name": "GREATER FLAMINGO",
+    "scientific_name": "Phoenicopterus roseus",
+    "size": 3,
+    "rock_water": "W",
+    "cost": 16,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Europe",
+    "ability": "Posturing 1",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 512,
+    "name": "EURASIAN EAGLE-OWL",
+    "scientific_name": "Bubo bubo",
+    "size": 2,
+    "cost": 10,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Europe",
+    "reqs": "Partner zoo",
+    "ability": "Perception 4",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 513,
+    "name": "BARN OWL",
+    "scientific_name": "Tyto alba",
+    "size": 1,
+    "cost": 12,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Europe",
+    "ability": "Perception 4",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 514,
+    "name": "EMU",
+    "scientific_name": "Dromaius novaehollandiae",
+    "size": 5,
+    "cost": 22,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Australia",
+    "reqs": "Australia x2",
+    "ability": "Peacocking",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 515,
+    "name": "AUSTRALIAN PELICAN",
+    "scientific_name": "Pelecaus conspicillatus",
+    "size": 4,
+    "rock_water": "WW",
+    "cost": 13,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Australia",
+    "ability": "Action: Build",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 516,
+    "name": "NORHTERN CASSOWARY",
+    "scientific_name": "Casuarius unappendiculatus",
+    "size": 3,
+    "cost": 12,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Australia",
+    "reqs": "Partner zoo",
+    "ability": "Multiplier: Build",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 517,
+    "name": "LAUGHING KOOKABURRA",
+    "scientific_name": "Dacelo novaeguineae",
+    "size": 2,
+    "cost": 9,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Australia",
+    "reqs": "Australia",
+    "ability": "Iconic Animal: Australia",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 518,
+    "name": "LESSER BIRD-OF-PARADISE",
+    "scientific_name": "Paradisaea minor",
+    "size": 1,
+    "cost": 15,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Australia",
+    "ability": "Posturing 1",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 519,
+    "name": "(DOMESTIC) GOAT",
+    "scientific_name": "Capra aegagrus hircus",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 520,
+    "name": "SHEEP",
+    "scientific_name": "Ovis gmelini aries",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 521,
+    "name": "HORSE",
+    "scientific_name": "Equus caballus",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 522,
+    "name": "DONKEY",
+    "scientific_name": "Equus asinus asinus",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal\nInventive",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 523,
+    "name": "DOMESTIC RABBIT",
+    "scientific_name": "Oryctolagus cuniculus",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 524,
+    "name": "MANGALICA",
+    "scientific_name": "Sus scrofa form. domestica",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 525,
+    "name": "GUINEA PIG",
+    "scientific_name": "Cavia porcellus form. domestica",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal\nDigging 1",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 526,
+    "name": "ALPACA",
+    "scientific_name": "Vicugna pacos",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 527,
+    "name": "COCONUT LORIKEET",
+    "scientific_name": "Trichoglossus haematodus",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 528,
+    "name": "BENNETT'S WALLABY",
+    "scientific_name": "Macropus rufogriseus",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal\nPouch 1",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "BASE"
+  },
+  {
+    "card_id": 529,
+    "name": "MAGNIFICENT SEA ANEMONE",
+    "scientific_name": "Heteractis magnifica",
+    "size": 1,
+    "special": "Aq 1",
+    "cost": 6,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Australia",
+    "ability": "Mark",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "MARK",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 530,
+    "name": "ORANGE CLOWNFISH",
+    "scientific_name": "Amphiprion percula",
+    "size": 1,
+    "special": "Aq 1",
+    "cost": 10,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Australia",
+    "ability": "none",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "2 APPEAL",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 531,
+    "name": "PALETTE SURGEONFISH",
+    "scientific_name": "Paracanthurus hepatus",
+    "size": 1,
+    "special": "Aq 1",
+    "cost": 9,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Asia",
+    "ability": "Trade",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "X : $5",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 532,
+    "name": "ZOOPLANKTON",
+    "scientific_name": "",
+    "size": 1,
+    "special": "Aq 0",
+    "cost": 4,
+    "type": [
+      "Sea"
+    ],
+    "continent": "none",
+    "ability": "Sea Animal Magnet",
+    "tickets": 1,
+    "conservation": 0,
+    "reputation": 0,
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 533,
+    "name": "BLACKSIDE HAWKFISH",
+    "scientific_name": "Paracirrhites forsteri",
+    "size": 2,
+    "special": "Aq 1",
+    "cost": 11,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Australia",
+    "ability": "Posturing 1",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "KIOSK/PAV",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 534,
+    "name": "SOUTHERN BLUE-RINGED OCTOPUS",
+    "scientific_name": "Hapalochlaena maculosa",
+    "size": 2,
+    "special": "Aq 1",
+    "cost": 12,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Australia",
+    "ability": "Venom 1 / Inventive",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "$3",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 535,
+    "name": "SHARKNOSE GOBY",
+    "scientific_name": "Elacatinus evelynae",
+    "size": 1,
+    "special": "Aq 1",
+    "cost": 7,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Americas",
+    "ability": "Symbiosis, Helpful",
+    "tickets": 2,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "NONE",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 536,
+    "name": "LONHORN COWFISH",
+    "scientific_name": "Lactoria cornuta",
+    "size": 2,
+    "special": "Aq 1",
+    "cost": 9,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Africa",
+    "ability": "Boost: Sponsors",
+    "tickets": 4,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "1<- CARD ->",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 537,
+    "name": "BLACKBAR TRIGGERFISH",
+    "scientific_name": "Rhinecanthus aculeatus",
+    "size": 2,
+    "special": "Aq 1",
+    "cost": 14,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Africa",
+    "reqs": "University",
+    "ability": "Constriction / Clever",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "DRAW CARD",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 538,
+    "name": "DEVIL FIREFISH",
+    "scientific_name": "Pterois miles",
+    "size": 2,
+    "special": "Aq 1",
+    "cost": 16,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Asia",
+    "reqs": "Science",
+    "ability": "Venom 1 /Inventive",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "1 X",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 539,
+    "name": "AMERICAN WHITESPOTTED FILEFISH",
+    "scientific_name": "Cantherhines macrocerus",
+    "size": 1,
+    "special": "Aq 1",
+    "cost": 12,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Americas",
+    "ability": "",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "<- CARD 1",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 540,
+    "name": "GUINEAFOWL PUFFER",
+    "scientific_name": "Arothron meleagris",
+    "size": 2,
+    "special": "Aq 2",
+    "cost": 15,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Asia",
+    "ability": "Venom 1 / Inventive",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "1 REP",
+    "wave": "WAVE",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 541,
+    "name": "BLUESPOTTED RIBBONTAIL RAY",
+    "scientific_name": "Taeniura lymma",
+    "size": 2,
+    "special": "Aq 1",
+    "cost": 16,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Asia",
+    "ability": "Digging 1",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "reef": "DIG 1",
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 542,
+    "name": "HUMPHEAD WRASSE",
+    "scientific_name": "Cheilinus undulatus",
+    "size": 3,
+    "special": "Aq 2",
+    "cost": 22,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Africa",
+    "reqs": "University",
+    "ability": "Extra Shift",
+    "tickets": 6,
+    "conservation": 1,
+    "reputation": 0,
+    "reef": "EXTRA SHIFT",
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 543,
+    "name": "COASTAL MANTA RAY",
+    "scientific_name": "Mobula alfredi",
+    "size": 5,
+    "special": "Aq 4",
+    "cost": 23,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Asia",
+    "reqs": "Animals II",
+    "ability": "Glide 3",
+    "tickets": 8,
+    "conservation": 0,
+    "reputation": 1,
+    "reef": "1 CONS",
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 544,
+    "name": "CARIBBEAN REEF SHARK",
+    "scientific_name": "Carcharhinus perezi",
+    "size": 4,
+    "special": "Aq 3",
+    "cost": 20,
+    "type": [
+      "Sea",
+      "Predator"
+    ],
+    "continent": "Americas",
+    "ability": "Shark Attack 1",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 1,
+    "reef": "SA 1",
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 545,
+    "name": "LONGCOMB SAWFISH",
+    "scientific_name": "Pristis zijsron",
+    "size": 4,
+    "special": "Aq 3",
+    "cost": 21,
+    "type": [
+      "Sea",
+      "Sea"
+    ],
+    "continent": "Africa",
+    "reqs": "Sea",
+    "ability": "Cut Down",
+    "tickets": 9,
+    "conservation": 1,
+    "reputation": 0,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 546,
+    "name": "SAND TIGER SHARK",
+    "scientific_name": "Carcharias taurus",
+    "size": 5,
+    "rock_water": "R",
+    "special": "Aq 0",
+    "cost": 32,
+    "type": [
+      "Sea",
+      "Predator"
+    ],
+    "continent": "Australia",
+    "reqs": "Animals II",
+    "ability": "Shark Attack 2",
+    "tickets": 8,
+    "conservation": 1,
+    "reputation": 0,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 547,
+    "name": "MEDITERRANEAN RAINBOW WRASSE",
+    "scientific_name": "Corris julis",
+    "size": 1,
+    "rock_water": "R",
+    "special": "Aq 0",
+    "cost": 8,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Europe",
+    "ability": "Symbiosis",
+    "tickets": 3,
+    "conservation": 0,
+    "reputation": 0,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 548,
+    "name": "SHORT-SNOUTED SEAHORSE",
+    "scientific_name": "Hippocampus hippocampus",
+    "size": 1,
+    "rock_water": "R",
+    "special": "Aq 1",
+    "cost": 7,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Europe",
+    "ability": "Camouflage, Pouch 1",
+    "tickets": 2,
+    "conservation": 0,
+    "reputation": 0,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 549,
+    "name": "COMMON OCTOPUS",
+    "scientific_name": "Octopus vulgaris",
+    "size": 3,
+    "rock_water": "R",
+    "special": "Aq 2",
+    "cost": 9,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Europe",
+    "reqs": "Science",
+    "ability": "Camouflage",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 550,
+    "name": "COMPASS JELLYFISH",
+    "scientific_name": "Chrysaora hysoscella",
+    "size": 3,
+    "special": "Aq 2",
+    "cost": 10,
+    "type": [
+      "Sea"
+    ],
+    "continent": "Europe",
+    "reqs": "Reputation 3",
+    "ability": "Glide 2",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 551,
+    "name": "LOGGERHEAD SEA TURTLE",
+    "scientific_name": "Caretta caretta",
+    "size": 4,
+    "special": "Aq 3 / LRH 3",
+    "cost": 23,
+    "type": [
+      "Sea",
+      "Reptile"
+    ],
+    "continent": "Europe",
+    "ability": "Scuba Dive X",
+    "tickets": 8,
+    "conservation": 0,
+    "reputation": 0,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 552,
+    "name": "GREEN SEA TURTLE",
+    "scientific_name": "Chelonia mydas",
+    "size": 3,
+    "special": "Aq 2 / LRH 2",
+    "cost": 17,
+    "type": [
+      "Sea",
+      "Reptile"
+    ],
+    "continent": "Americas",
+    "ability": "Scuba Dive X",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 553,
+    "name": "TAMBAQUI",
+    "scientific_name": "Colossoma macropomum",
+    "size": 1,
+    "special": "Aq 1",
+    "cost": 15,
+    "type": [
+      "Sea",
+      "Herbivore"
+    ],
+    "continent": "Americas",
+    "ability": "Adapt 1",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 0,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 554,
+    "name": "AFRICAN PENGUIN",
+    "scientific_name": "Spheniscus demersus",
+    "size": 3,
+    "rock_water": "RW",
+    "special": "Aq 2",
+    "cost": 18,
+    "type": [
+      "Sea",
+      "Bird"
+    ],
+    "continent": "Africa",
+    "reqs": "Animals II",
+    "ability": "Adapt 2",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 1,
+    "wave": "Wave",
+    "expansion": "MW"
+  },
+  {
+    "card_id": 555,
+    "name": "GOLDEN SNUB-NOSED MONKEY",
+    "scientific_name": "Rhinopithecus roxellana",
+    "size": 3,
+    "rock_water": "R",
+    "cost": 18,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Asia",
+    "reqs": "Science",
+    "ability": "Pilfering 1 / Sprint 1",
+    "tickets": 6,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "MW"
+  },
+  {
+    "card_id": 556,
+    "name": "WOLVERINE",
+    "scientific_name": "Gulo gulo",
+    "size": 3,
+    "rock_water": "R",
+    "cost": 15,
+    "type": [
+      "Predator",
+      "Bear"
+    ],
+    "continent": "Europe",
+    "ability": "Boost Association",
+    "tickets": 5,
+    "conservation": 0,
+    "reputation": 1,
+    "expansion": "MW"
+  },
+  {
+    "card_id": 557,
+    "name": "VIETNAMESE POT-BELLIED PIG",
+    "scientific_name": "Sus scrofa f. domestica",
+    "size": 1,
+    "special": "PZ 1",
+    "cost": 7,
+    "type": [
+      "Pet"
+    ],
+    "continent": "",
+    "ability": "Petting Zoo Animal",
+    "tickets": 0,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "MW"
+  },
+  {
+    "card_id": 558,
+    "name": "NORTHERN MURIQUI",
+    "scientific_name": "Brachyteles hypoxanthus",
+    "size": 4,
+    "rock_water": "R",
+    "cost": 16,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Americas",
+    "reqs": "University",
+    "ability": "Monkey Gang",
+    "tickets": 6,
+    "conservation": 1,
+    "reputation": 0,
+    "expansion": "MW"
+  },
+  {
+    "card_id": 559,
+    "name": "COQUEREL'S SIFAKA",
+    "scientific_name": "Propithecus coquereli",
+    "size": 3,
+    "rock_water": "R",
+    "cost": 17,
+    "type": [
+      "Primate"
+    ],
+    "continent": "Africa",
+    "ability": "Monkey Gang, Jumping 2",
+    "tickets": 7,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "MW"
+  },
+  {
+    "card_id": 560,
+    "name": "BRAHMINY KITE",
+    "scientific_name": "Haliastur indus",
+    "size": 3,
+    "rock_water": "RW",
+    "special": "LBA 1",
+    "cost": 12,
+    "type": [
+      "Bird"
+    ],
+    "continent": "Australia",
+    "ability": "Hunter 2",
+    "tickets": 6,
+    "conservation": 0,
+    "reputation": 0,
+    "expansion": "MW"
+  }
+]
