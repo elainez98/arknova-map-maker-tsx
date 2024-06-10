@@ -65,9 +65,9 @@ function Arkle() {
 
   function getTypeClass(card: unknown[], guess: unknown[]) {
     if (_.isEqual(card, guess)) {
-      return "corect";
+      return "correct";
     }
-    if (_.intersection(card, guess)) {
+    if (_.intersection(card, guess).length) {
       return "partial";
     }
     return "wrong";
@@ -162,8 +162,8 @@ function Arkle() {
       </div>
       {win && (<div className="win">You Win!</div>)}
       <div className="reset-container">
-        {/* <div>card id: {card.card_id}</div>
-        <div>card name: {card.name}</div> */}
+        <div>card id: {card.card_id}</div>
+        <div>card name: {card.name}</div>
         <button type="button" onClick={reset}>reset</button>
       </div>
     </div >
