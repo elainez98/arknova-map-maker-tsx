@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrushSelection, BrushSelectionContext } from "../context";
 import { Terrain, TerrainMap } from "../Model/terrain";
 import { useContext, useState } from "react"
@@ -6,6 +5,7 @@ import { useContext, useState } from "react"
 import Bonus from "./Bonus";
 import { HexData } from "../Model/hex";
 import Hexagon from "react-hexagon"
+import React from 'react';
 import { VALUE_ICONS } from "../Model/icon";
 import { times } from "lodash"
 
@@ -24,12 +24,15 @@ function getGridDimensions(
 };
 
 function getHexStyle(hexagon: HexData) {
-  return {
-    fill: TerrainMap.get(hexagon.terrain || Terrain.NORMAL),
+  const terrain = hexagon.terrain;
+  const style: { [k: string]: any } = {
     stroke: hexagon.buildUpgrade ? "red" : "black",
     strokeWidth: hexagon.buildUpgrade ? 5 : 2,
-    margin: 0,
+    margin: 0.1,
+    fill: terrain ? TerrainMap.get(terrain) : 'white',
+    fillOpacity: terrain ? 1 : 0,
   };
+  return style;
 }
 
 interface HexagonGridProps {
@@ -42,7 +45,6 @@ function HexagonGrid(props: HexagonGridProps) {
     hexagons,
     setHexagons,
   } = props;
-  const gridWidth = 1000; // TODO: get rid of this
   const brushSelection: BrushSelection = useContext(BrushSelectionContext);
 
   const [hexInfo] = useState(getGridDimensions())
@@ -131,5 +133,6 @@ function HexagonGrid(props: HexagonGridProps) {
     })}
   </svg>
   );
+}
 
-  export default HexagonGrid;
+export default HexagonGrid;

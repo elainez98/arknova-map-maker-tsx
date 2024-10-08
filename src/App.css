@@ -72,3 +72,33 @@
   width: 234px;
   border:#282c34 solid;
 }
+
+.partners {
+  border: orange solid;
+  width: 200px;
+  height: 682px;
+  margin-left: 97px;
+  margin-top: 106px;
+}
+.right-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.notebook {
+  border: grey solid;
+  width: 350px;
+  height: 450px;
+}
+
+.uni-worker-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.uni {
+  border: yellow solid;
+  margin-left: 8px;
+  width: 198px;
+  height: 420px;
+}

@@ -7,6 +7,6 @@ export enum Terrain {
 export const TerrainMap: Map<Terrain, string> =
   new Map([
     [Terrain.NORMAL, "beige"],
-    [Terrain.WATER, "aqua"],
-    [Terrain.ROCK, "grey"],
+    [Terrain.WATER, "#6996ab"],
+    [Terrain.ROCK, "#6a5c5c"],
   ])
