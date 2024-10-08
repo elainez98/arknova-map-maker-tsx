@@ -1,13 +1,13 @@
+import { Terrain, TerrainMap } from "../Model/terrain";
+
+import Bonus from "./Bonus";
+import { HexData } from "../Model/hex";
+import Hexagon from "react-hexagon"
 import { times } from "lodash"
 import { useState } from "react"
 
-import Hexagon from "react-hexagon"
-import { Terrain, TerrainMap } from "../Model/terrain";
-import { HexData } from "../Model/hex";
-import Bonus from "./Bonus";
-
 function getGridDimensions(
-  hexSize = 60,
+  hexSize = 63.5,
   columns = 5,
   rows = 13
 ) {
@@ -37,10 +37,8 @@ function HexagonGrid(props: HexagonGridProps) {
   const {
     hexagons,
   } = props;
-  const gridWidth = 1000; // TODO: get rid of this
 
   const [hexInfo] = useState(getGridDimensions())
-  let skipped = 0
 
   function getXYIndex(index) {
     const row = Math.floor(index / 9);
@@ -50,81 +48,57 @@ function HexagonGrid(props: HexagonGridProps) {
     return `${row}, ${column}`;
   }
 
-  const getHexDimensions = (row: number, col: number) => {
-    row++
-    const dimensions = {
-      width: `${hexInfo.hexWidth}px`,
-      height: `${hexInfo.hexHeight}px`,
-      x: col * hexInfo.hexSize * 3
-    };
-    if (row % 2 === 1) {
-      dimensions.x += hexInfo.hexSize * (3 / 2);
+  function getHexDims(i: number) {
+    const patternIdx = i % 9;
+    const group = Math.floor(i / 9);
+    const isFirstRow = patternIdx < 4;
+    const realIdx = isFirstRow ? patternIdx : patternIdx - 4;
+    const rad = hexInfo.hexSize;
+    const height = hexInfo.hexHeight;
+    const width = hexInfo.hexWidth;
+    const y = height * group + (isFirstRow ? 0 : height / 2);
+    const x = (3 * rad * realIdx) + (isFirstRow ? rad * (3 / 2) : 0);
+    return {
+      height: `${height}px`,
+      width: `${width}px`,
+      y,
+      x,
     }
-    return dimensions;
-  };
-
-  function getRowDimensions(row: number) {
-    var dimensions = {
-      y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
-      height: `${hexInfo.hexHeight}px`,
-      marginLeft: `${(hexInfo.hexSize) * 3}px`,
-      marginTop: 0
-    };
-    if (row % 2 === 0) {
-      dimensions = {
-        y: `${row * (hexInfo.hexSize * (Math.sqrt(3) / 2))}px`,
-        height: `${hexInfo.hexHeight}px`,
-        marginLeft: `${(hexInfo.hexSize / 2) * 3}px`,
-        marginTop: 0
-      };
-    }
-    return dimensions;
-  };
+  }
 
   function testOnClick(hexagon: HexData) {
     console.log("clicked! now", hexagon);
   }
 
-  return (<svg width="1000" height="650">
-    {times(hexInfo.rows, (row) => {
-      const columns = hexInfo.columns;
-      const rowDim = getRowDimensions(row);
+  const nCells = 58;
+  return (<svg width="900" height="780">
+    {times(nCells, (n) => {
+      const dims = getHexDims(n);
+      const hexagon = hexagons.find(hex => hex.index === n) ||
+        { index: n, terrain: Terrain.NORMAL };
+      const bonus = hexagon.bonus ? <Bonus bonusData={hexagon.bonus} /> : null;
       return (
         <svg
-          key={row}
-          width={gridWidth}
-          height={rowDim.height}
-          y={rowDim.y}
+          key={n}
+          height={dims.height}
+          width={dims.width}
+          y={dims.y}
+          x={dims.x}
         >
-          {times(columns, (col) => {
-            if (row % 2 === 0 && col === columns - 1) {
-              skipped++
-              return <></>
-            }
-            const iHexagon = (row * hexInfo.columns + col) - skipped;
-            const hexagon = hexagons.find(hex => hex.index === iHexagon) || {
-              index: iHexagon,
-              terrain: Terrain.NORMAL,
-            };
-            const hexDim = getHexDimensions(row, col);
-            const bonus = hexagon.bonus ? <Bonus bonusData={hexagon.bonus} /> : null;
-            return (
-              <svg
-                key={iHexagon}
-                height={hexDim.height}
-                width={hexDim.width}
-                x={`${hexDim.x}px`}
-              >
-                <Hexagon style={getHexStyle(hexagon)} flatTop onClick={() => testOnClick(hexagon)}>
-                  <foreignObject width={200} height={200} x="29%" y="30%" style={{ pointerEvents: 'none' }}>
-                    {bonus}
-                  </foreignObject>
-                </Hexagon>
-              </svg>
-            );
-          })}
-        </svg>
-      );
+          <Hexagon style={getHexStyle(hexagon)} flatTop
+            onClick={testOnClick}
+          >
+            <foreignObject
+              width={200}
+              height={200}
+              x="29%"
+              y="30%"
+              style={{ pointerEvents: 'none' }}
+            >
+              {bonus}
+            </foreignObject>
+          </Hexagon>
+        </svg>);
     })}
   </svg>);
 }

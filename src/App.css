@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+.bg {
+  display: flex;
+  flex-direction: column;
+
+  width: 1845px;
+  height: 990px;
+
+  background-size: cover;
+  background-image: url("../public/bg.png");
+  border:blue solid;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 11px;
+  height: 900px;
+
+  border:red solid;
+}
+
+.map {
+  border: green solid;
+  margin-top: 33px;
+  padding-left: 20px;
+  height: 780px;
+  width: 900px;
+}
+
+.bonuses {
+  margin-top: 33px;
+  width: 234px;
+  border:#282c34 solid;
+}
