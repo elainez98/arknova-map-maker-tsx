@@ -2,37 +2,41 @@ import './App.css';
 import './App.css';
 
 import { BrushSelection, BrushSelectionContext } from './context';
-import React, { useState } from 'react';
-import { Terrain, TerrainMap } from './Model/terrain';
+import { HexData, decode } from './Model/hex';
 
-import Bonus from './components/Bonus';
 import BrushBox from './components/Brushbox';
 import BrushBoxTextures from './components/Brushbox-textures';
-import { HexData } from './Model/hex';
+import ExportUrl from './components/ExportUrl';
 import HexagonGrid from './components/HexagonGrid';
+import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+
+function getHexagonsOrDefault(serializedHexes: string | null): HexData[] {
+  if (!serializedHexes) {
+    return [];
+  }
+  return serializedHexes.split(',').map(decode);
+}
 
 function App() {
   const [brushSelection, setBrushSelection] = useState({} as BrushSelection);
+  const [searchParams] = useSearchParams();
   const { terrain, icon } = brushSelection;
-
-  const hexagons: HexData[] = [
-    {
-      index: 3,
-      terrain: Terrain.ROCK
-    }
-  ];
+  const [hexagons, setHexagons] =
+    useState<HexData[]>(getHexagonsOrDefault(searchParams.get('hexes')))
 
   return (
     <div className="App">
       "Icon Id: {icon}"
       "Terrain Id: {terrain}"
+      "Brush:  {brushSelection.icon} {brushSelection.terrain}""
       <BrushSelectionContext.Provider value={brushSelection}>
         <div className="bg">
           <div className="top">
             <div className="bonuses">
             </div>
             <div className="map">
-              <HexagonGrid hexagons={hexagons} />
+              <HexagonGrid hexagons={hexagons} setHexagons={setHexagons} />
             </div>
             <div className="partners">
             </div>
@@ -50,9 +54,10 @@ function App() {
           <div className="bottom">
           </div>
         </div>
-        <BrushBox setBrushSelection={setBrushSelection} />
-        <BrushBoxTextures setBrushSelection={setBrushSelection} />
+        <BrushBox setBrushSelection={setBrushSelection} brushSelection={brushSelection} />
+        <BrushBoxTextures setBrushSelection={setBrushSelection} brushSelection={brushSelection} />
       </BrushSelectionContext.Provider>
+      <ExportUrl hexagons={hexagons} />
     </div>
   );
 }

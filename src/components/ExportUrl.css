@@ -1,0 +1,9 @@
+.share {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.share input {
+  width: 50%;
+}

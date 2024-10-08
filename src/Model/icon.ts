@@ -22,6 +22,15 @@ export enum Icon {
   Tower,
 }
 
+export const VALUE_ICONS = [
+  Icon.Money,
+  Icon.Reputation,
+  Icon.Hunter,
+  Icon.Sunbathing,
+  Icon.Perception,
+  Icon.Pouch,
+];
+
 export class IconConfig {
   constructor(
     readonly icon: Icon,
@@ -30,6 +39,8 @@ export class IconConfig {
     readonly size: number,
   ) { }
 }
+
+export const BonusConfig = new IconConfig(Icon.Bonus, 50.026, 40.739, 1750);
 
 export const IconMap: Map<Icon, IconConfig> =
   new Map([
@@ -43,6 +54,4 @@ export const IconMap: Map<Icon, IconConfig> =
     [Icon.Clever, 39.490, 40.739, 2385.3],
     [Icon.Marketing, 97.179, 40.694, 1765.5],
     [Icon.Tower, 78.898, 1.1312, 2946.8],
-    [Icon.Bonus, 50.026, 40.739, 1750],
   ].map(([icon, x, y, size]) => [icon, new IconConfig(icon, x, y, size)]));
-

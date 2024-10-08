@@ -1,7 +1,11 @@
+import './index.css';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import App from './App';
+import Arkle from './pages/arkle/Arkle';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -9,7 +13,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<App />} />
+        <Route path="arkle" element={<Arkle />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
